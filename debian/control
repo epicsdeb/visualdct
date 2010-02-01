@@ -2,14 +2,14 @@ Source: visualdct
 Section: misc
 Priority: optional
 Maintainer: Michael Davidsaver <Michael Davidsaver>
-Build-Depends: debhelper (>> 5), javahelper , ant
+Build-Depends: cdbs, debhelper (>> 5), javahelper , ant
 Build-Depends-Indep: openjdk-6-jdk
-Standards-Version: 3.7.3
+Standards-Version: 3.8.0
 Homepage: <homepage>
 
 Package: visualdct
 Architecture: all
-Depends: ${java:Depends}, ${misc:Depends}
+Depends: java5-runtime | java6-runtime
 Description: VDCT EPICS database visualization and designer
  A tool to provide a graphical view of an EPICS database with
  the capibility to edit.
