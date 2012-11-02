@@ -54,6 +54,7 @@ import com.cosylab.vdct.Settings;
 import com.cosylab.vdct.Version;
 import com.cosylab.vdct.db.DBDataEntry;
 import com.cosylab.vdct.db.DBEntry;
+import com.cosylab.vdct.db.DBFieldData;
 import com.cosylab.vdct.db.DBResolver;
 import com.cosylab.vdct.db.DBSheetColWidth;
 import com.cosylab.vdct.db.DBSheetColumn;
@@ -1145,6 +1146,7 @@ private void addSubObjectToLayout(VisibleObject object) {
 		final String nl = "\n";
 		final String recordStart = nl+DBResolver.RECORD+"("; 
 		final String fieldStart = "  "+DBResolver.FIELD+"("; 
+		final String infoStart = "  "+DBResolver.INFO+"("; 
 
 		Enumeration e = elements.elements();
 		while (e.hasMoreElements()) 
@@ -1164,16 +1166,22 @@ private void addSubObjectToLayout(VisibleObject object) {
 				{
 					name = renamer.matchAndReplace(name);
 					// warning if macros still exist
-					if (name.indexOf("$(") >= 0 || name.indexOf("${") >= 0)
-						Console.getInstance().println("WARNING: record name '" + name + "' is not fully resolved.");
+					if (!Settings.getInstance().getDisableMacroWarnings()) {
+				 		if (name.indexOf("$(") >= 0 || name.indexOf("${") >= 0)
+				 			Console.getInstance().println("WARNING: record name '" + name + "' is not fully resolved.");
+					}
 				}
 
 				name = StringUtils.quoteIfMacro(name);
 
 				// write comment
-				if (recordData.getComment()!=null)
-					file.writeBytes(nl+recordData.getComment());
-
+				String comment = recordData.getComment();
+			 	if (comment!=null) {
+			 		// substitute any macros first
+			 		comment = renamer.matchAndReplace(comment);
+			 		file.writeBytes(nl+comment);
+			 	}
+				
 				// write "record" block
 				file.writeBytes(recordStart+recordData.getType()+comma+name+") {"+nl);
 
@@ -1233,8 +1241,10 @@ private void addSubObjectToLayout(VisibleObject object) {
 								 value = VDBTemplateInstance.applyProperties(value, namer.getSubstitutions());*/
 						value = renamer.matchAndReplace(value);							  	 
 						// warning if macros still exist
-						if (value != null && (value.indexOf("$(") >= 0 || value.indexOf("${") >= 0))
-							Console.getInstance().println("WARNING: field value '" + value + "' of '" + fieldData.getFullName() + "' is not fully resolved.");
+						if (!Settings.getInstance().getDisableMacroWarnings()) {
+					 		if (value != null && (value.indexOf("$(") >= 0 || value.indexOf("${") >= 0))
+					 			Console.getInstance().println("WARNING: field value '" + value + "' of '" + fieldData.getFullName() + "' is not fully resolved.");
+						}
 					}
 
 					// if value is different from init value
@@ -1259,6 +1269,43 @@ private void addSubObjectToLayout(VisibleObject object) {
 					}
 				}
 
+				
+			
+				// write info fields
+				if (recordData.getInfoFields() != null) {
+		 		e2 = recordData.getInfoFields().elements();
+				while (e2.hasMoreElements())
+					{
+						DBFieldData infoData = (DBFieldData)(e2.nextElement());
+
+						// write comment
+						if (infoData.getComment()!=null)
+							file.writeBytes(infoData.getComment()+nl);
+							
+						String value = StringUtils.removeQuotes(infoData.getValue());
+						
+						if (export)
+						{
+							/*// apply ports
+							if (namer.getPorts()!=null && value!=null) 
+								value = VDBTemplateInstance.applyPorts(value, namer.getPorts());
+							
+							// apply macro substitutions
+							if (namer.getSubstitutions()!=null && value!=null) 								
+								 value = VDBTemplateInstance.applyProperties(value, namer.getSubstitutions());*/
+							value = renamer.matchAndReplace(value);							  	 
+					 		// warning if macros still exist
+					 		if (value != null && (value.indexOf("$(") >= 0 || value.indexOf("${") >= 0))
+					 			Console.getInstance().println("WARNING: info field value '" + value + "' of '" + recordData.getName() + "#" + infoData.getName() + "' is not fully resolved.");
+						}
+												
+						// write field value						 		
+						file.writeBytes(infoStart+infoData.getName()+comma+"\""+value+"\")"+nl);
+	 				}
+				}
+				
+
+				
 				file.writeBytes("}"+nl);
 			}
 			/*else if (obj instanceof Group)
@@ -2262,8 +2309,7 @@ private void addSubObjectToLayout(VisibleObject object) {
 	public static Group getRoot(Object id) {
 		Group group = (Group)rootGroups.get(id);
 		if (group == null) {
-			System.err.println("Warning: Group.getRoot: instance with id does not exist,"
-					+ " creating new one.");
+			//System.err.println("Warning: Group.getRoot: instance with id does not exist, creating new one.");
 
 			group = new Group(null);
 			group.setDsId(id);
@@ -2291,7 +2337,7 @@ private void addSubObjectToLayout(VisibleObject object) {
 	public Object getDsId() {
 		Object rootId = getParent() != null ? getParent().getDsId() : dsId;
 		if (rootId == null) {
-			System.out.println("Warning: returning null for root container id.");
+			//System.out.println("Warning: returning null for root container id.");
 		}
 		return rootId;
 	}

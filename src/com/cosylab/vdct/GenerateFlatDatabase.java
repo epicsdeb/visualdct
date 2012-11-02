@@ -73,6 +73,7 @@ public class GenerateFlatDatabase
 		try {
 			System.out.println("Global macro evaluation: "+(Settings.getInstance().getGlobalMacros()?"enabled":"disabled"));
 			System.out.println("Produce hierarhical names like CapFast: "+(Settings.getInstance().getHierarhicalNames()?"enabled":"disabled"));
+			System.out.println("Unresolved macro warnings: "+(Settings.getInstance().getDisableMacroWarnings()?"disabled":"enabled"));
 			System.out.println();
 						
 			Object id = new Object();
@@ -152,7 +153,10 @@ public class GenerateFlatDatabase
 						continue;
 					} else if (args[i].equals("--disable-global-macros")) {
 						Settings.getInstance().setGlobalMacrosTemp(false);	
-						continue;									
+						continue;	
+					} else if (args[i].equals("--disable-macro-warnings")) {
+						Settings.getInstance().setDisableMacroWarnings(true);
+						continue;							
 					} else if (args[i].equals("-h") || args[i].equals("--help")) {
 						printHelp();
 
@@ -268,6 +272,9 @@ public class GenerateFlatDatabase
 		
 		System.out.println(" --enable-capfast and --disable-capfast");
 		System.out.println("   enables or disables production of hierarhical names like CapFast\n");
+
+		System.out.println(" --disable-macro-warnings");
+		System.out.println("   disables warnings about unresolved macros\n");
 		
 		System.out.println(" -h or --help");
 		System.out.println("   displays these lines here\n");

@@ -189,8 +189,7 @@ public static ViewState getInstance(Object dsId) {
 	ViewState viewState = (ViewState)instances.get(dsId);
     
     if (viewState == null) {
-		System.err.println("Warning: ViewState.getInstance: instance with id does not exist,"
-				+ " creating new one.");
+		//System.err.println("Warning: ViewState.getInstance: instance with id does not exist, creating new one.");
     	
 		viewState = new ViewState();
 		viewState.setDsId(dsId);
@@ -473,7 +472,7 @@ public static void setInstance(Object dsId, ViewState newInstance) {
 	if (mappedInstance != null) {
 		instances.remove(dsId);
 	} else {
-		System.err.println("Warning: view instance set with unregistered id, registering it.");
+		//System.err.println("Warning: view instance set with unregistered id, registering it.");
     }
     newInstance.setDsId(dsId);
 	instances.put(dsId, newInstance);

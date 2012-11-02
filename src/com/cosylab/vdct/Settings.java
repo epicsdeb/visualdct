@@ -55,6 +55,7 @@ public class Settings {
 	private boolean windowsPan = false;
 	private int recordLength = 40;
 	private boolean fastMove = false;
+	private boolean disableMacroWarnings = false;
 	
 	private int canvasWidth = 5000;
 	private int canvasHeight = 5000;
@@ -709,5 +710,15 @@ public void loadRecentFiles()
     public boolean isWireCrossingAvoidiance()
     {
         return wireCrossingAvoidiance;
+    }
+
+    public boolean getDisableMacroWarnings()
+    {
+		  return disableMacroWarnings;
+    }
+
+    public void setDisableMacroWarnings(boolean b)
+    {
+		  disableMacroWarnings = b;
     }
 }

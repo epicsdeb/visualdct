@@ -190,6 +190,21 @@ public String toString() {
 	return name+" ("+record_type+")";
 }
 
+protected Vector infoFieldsV = null;
+/**
+ * @return the infoFieldsV
+ */
+public Vector getInfoFields() {
+	return infoFieldsV;
+}
+
+/**
+ * @param infoFieldsV the infoFieldsV to set
+ */
+public void setInfoFields(Vector infoFieldsV) {
+	this.infoFieldsV = infoFieldsV;
+}
+
 public Record getRecord() {
 	if (record == null) {
 		// TASK:VISREPACT: uncomment when done

@@ -1149,7 +1149,7 @@ public void renameMacroProperty(InspectableProperty property)
 		if (group != null) {
 			return group.getDsId();
 		} else {
-			System.err.println("Warning: VDBTemplate.getDsId: returning null.");
+			//System.err.println("Warning: VDBTemplate.getDsId: returning null.");
 			return null;
 		}
 	}

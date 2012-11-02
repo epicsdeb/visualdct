@@ -1319,11 +1319,17 @@ MouseInputListener, Runnable, LinkCommandInterface {
 				Movable hilitedObject = (Movable)view.getHilitedObject();
 
 				// mark (remember) current position which is needed to create undo action
-				if (notYetDragged)
-					if (view.isSelected(hilitedObject))
+				if (notYetDragged) {
+					if (view.isSelected(hilitedObject)) {
 						markPositionSelection();
-					else
-						((VisibleObject)hilitedObject).markPosition();
+					} else {
+						if (hilitedObject != null) {
+						    ((VisibleObject)hilitedObject).markPosition();
+						} else {
+					    	//System.err.println("Warning: DrawingSurface.mouseDragged: trying to mark null object.");
+						}
+					}
+				}
 
 				// initial snap to grid (if needed)
 				if (notYetDragged && Settings.getInstance().getSnapToGrid())
@@ -3951,7 +3957,7 @@ MouseInputListener, Runnable, LinkCommandInterface {
 		templateReloadPostInit();
 
 		moveToGroup(group);
-		repaint();
+		refreshOnTemplateChanged();
 	}
 
 	/**
@@ -3988,6 +3994,14 @@ MouseInputListener, Runnable, LinkCommandInterface {
 
 		moveToGroup(grp);
 		grp.reset();
+		refreshOnTemplateChanged();
+	}
+	
+	private void refreshOnTemplateChanged() {
+		JComponent panel = getWorkspacePanel();
+		if (panel != null) {
+			resize(0, 0, panel.getWidth(), panel.getHeight());
+		}
 		repaint();
 	}
 

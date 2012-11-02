@@ -54,8 +54,7 @@ public class DBSheetData implements DsEventListener {
 
 		DBSheetData dbSheetData = (DBSheetData)instances.get(dsId);
 		if (dbSheetData == null) {
-			System.err.println("Warning: DBSheetData.getInstance: instance with id does not exist,"
-					+ " creating new one.");
+			//System.err.println("Warning: DBSheetData.getInstance: instance with id does not exist, creating new one.");
 
 			dbSheetData = new DBSheetData();
 			instances.put(dsId, dbSheetData);
