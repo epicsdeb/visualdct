@@ -72,7 +72,7 @@ public void subscribe(String subscriberID, MouseInputListener listener) {
 		comp.addMouseListener(proxy);
 		comp.addMouseMotionListener(proxy);
 	} else {
-		System.err.println("Warning: subscriber with id " + subscriberID + " doesn't exist.");
+		//System.err.println("Warning: subscriber with id " + subscriberID + " doesn't exist.");
 	}
 }
 /**

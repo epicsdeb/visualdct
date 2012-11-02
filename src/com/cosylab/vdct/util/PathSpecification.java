@@ -136,8 +136,8 @@ public class PathSpecification
 			t = new File(currentDir, fileName);
 			if (t.exists())
 				return t;
-			else
-				return null;		
+			//else
+			//	return null;		
 		}
 		
 		// go and search		

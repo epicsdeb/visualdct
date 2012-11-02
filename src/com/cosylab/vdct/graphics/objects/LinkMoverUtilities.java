@@ -23,7 +23,7 @@ import com.cosylab.vdct.Console;
  * <code>LinkMoverUtilities</code> supplies the tools for moving the links. 
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
- * @version $Id: LinkMoverUtilities.java,v 1.4 2008-06-10 15:07:45 ssah Exp $
+ * @version $Id: LinkMoverUtilities.java 32833 2008-06-10 15:07:46Z ssah $
  * 
  * @since VERSION
  */

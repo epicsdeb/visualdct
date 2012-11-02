@@ -27,6 +27,10 @@
 		<ant antfile="VDCTBuildSimple.xml" dir="." target="jar"/>
 	</target>
 
+        <target name="srcjar">
+                <ant antfile="VDCTBuild.xml" dir="." target="srcjar"/>
+        </target>
+
 	<target name="jarcomplex">
 		<ant antfile="VDCTBuild.xml" dir="." target="jar"/>
 	</target>

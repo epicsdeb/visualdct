@@ -186,7 +186,9 @@ LinkCommandInterface, RepaintInterface, Pageable {
 					((DsEventListener)iterator.next()).onDsFocused(id);
 				}
 				
-				desktopInterface.setFocused(drawingSurface.getDisplayer());
+				if (desktopInterface != null) {
+				    desktopInterface.setFocused(drawingSurface.getDisplayer());
+				}
 				
 				drawingSurface.updateWorkspaceScale();
 			} else {
@@ -444,9 +446,11 @@ LinkCommandInterface, RepaintInterface, Pageable {
 	 * @see com.cosylab.vdct.graphics.GUIMenuInterface#loadRdbGroup(javax.swing.JFrame)
 	 */
 	public void loadRdbGroup(JFrame guiContext) {
-		desktopInterface.createNewInternalFrame();
-		if (dsInterface != null) {
-			dsInterface.loadRdbGroup(guiContext);
+		if (desktopInterface != null) {
+			desktopInterface.createNewInternalFrame();
+			if (dsInterface != null) {
+				dsInterface.loadRdbGroup(guiContext);
+			}
 		}
 	}
 
@@ -481,7 +485,9 @@ LinkCommandInterface, RepaintInterface, Pageable {
 	 * @see com.cosylab.vdct.graphics.GUIMenuInterface#newCmd()
 	 */
 	public void newCmd() {
-		desktopInterface.createNewInternalFrame();
+		if (desktopInterface != null) {
+		    desktopInterface.createNewInternalFrame();
+		}
 		if (dsInterface != null) {
 			dsInterface.newCmd();
 		}
@@ -492,7 +498,7 @@ LinkCommandInterface, RepaintInterface, Pageable {
 	 */
 	public void openDB(File file) throws IOException {
 		// Recycle exiting drawing surface if it is empty and unmodified.
-		if (dsInterface == null || dsInterface.isModified() || !dsInterface.isEmpty()) {
+		if (desktopInterface != null && (dsInterface == null || dsInterface.isModified() || !dsInterface.isEmpty())) {
 			desktopInterface.createNewInternalFrame();
 		}
 		if (dsInterface != null) {

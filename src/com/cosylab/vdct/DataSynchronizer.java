@@ -66,7 +66,10 @@ public class DataSynchronizer {
 
 	public DataSynchronizer() {
 		super();
-		dialogParent = ((GetMainComponent)CommandManager.getInstance().getCommand("GetMainComponent")).getComponent();
+		GetMainComponent command = (GetMainComponent)CommandManager.getInstance().getCommand("GetMainComponent");
+		if (command != null) {
+		    dialogParent = command.getComponent();
+		}
 		dsManager = ((GetDsManager)CommandManager.getInstance().getCommand("GetDsManager")).getManager();
 	}
 

@@ -51,6 +51,7 @@ public class DBResolver {
 	public static final String RECORD	= "record";
 	public static final String GRECORD	= "grecord";
 	public static final String INCLUDE	= "include";
+	public static final String INFO	= "info";
 
 	public static final String PATH  	 = "path";
 	public static final String ADDPATH  	 = "addpath";
@@ -1843,6 +1844,24 @@ public class DBResolver {
 						DBFieldData fd = new DBFieldData(name, value);
 						fd.setComment(comment);	comment = nullString;
 						rd.addField(fd);
+					}
+
+					else if (tokenizer.sval.equalsIgnoreCase(INFO)) {
+
+						// read info_name
+						tokenizer.nextToken();
+						if ((tokenizer.ttype == EnhancedStreamTokenizer.TT_WORD) ||
+								(tokenizer.ttype == DBConstants.quoteChar)) name=tokenizer.sval;
+						else throw (new DBParseException("Invalid info field name...", tokenizer, fileName));
+
+						// read info_value
+						tokenizer.nextToken();
+						if (tokenizer.ttype == DBConstants.quoteChar) value=tokenizer.sval;
+						else throw (new DBParseException("Invalid info field value...", tokenizer, fileName));
+
+						DBFieldData fd = new DBFieldData(name, value);
+						fd.setComment(comment);	comment = nullString;
+						rd.addInfoField(fd);
 					}
 
 					else if (tokenizer.sval.equalsIgnoreCase(INCLUDE)) {

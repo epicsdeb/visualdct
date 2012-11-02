@@ -172,8 +172,7 @@ public static UndoManager getInstance(Object dsId) {
 
 	UndoManager undoManager = (UndoManager)instances.get(dsId);
     if (undoManager == null) {
-    	System.err.println("Warning: UndoManager.getInstance: instance with id does not exist,"
-    			+ " creating new one.");
+    	//System.err.println("Warning: UndoManager.getInstance: instance with id does not exist, creating new one.");
     	undoManager = new UndoManager(dsId);
     	instances.put(dsId, undoManager);
     }
