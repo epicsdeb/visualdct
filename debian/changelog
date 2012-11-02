@@ -1,3 +1,12 @@
+visualdct (2.6.1278-1) unstable; urgency=low
+
+  * New upstream version
+  * Fixes issue with info() tags.
+    Previous versions would not perserve info() tags in files which already contained them.
+    This is now fixed.  As yet there is no way to add/change info() tags from the UI.
+
+ -- Michael Davidsaver <mdavidsaver@bnl.gov>  Fri, 02 Nov 2012 13:44:29 -0400
+
 visualdct (2.6.1274-1) unstable; urgency=low
 
   * Initial release.
