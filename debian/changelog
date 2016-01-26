@@ -1,3 +1,10 @@
+visualdct (2.6.1278-3) unstable; urgency=medium
+
+  * Fix build dep. to be default-jdk
+  * drop cdbs build dep. in favor of dh7
+
+ -- Michael Davidsaver <mdavidsaver@gmail.com>  Tue, 26 Jan 2016 17:42:39 -0500
+
 visualdct (2.6.1278-2.1) wheezy; urgency=low
 
   * Build with default JDK
