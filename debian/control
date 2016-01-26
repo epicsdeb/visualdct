@@ -1,11 +1,13 @@
 Source: visualdct
 Section: misc
 Priority: optional
-Maintainer: Michael Davidsaver <mdavidsaver@bnl.gov>
+Maintainer: Michael Davidsaver <mdavidsaver@gmail.com>
 Build-Depends: debhelper (>= 7), javahelper, ant,
 Build-Depends-Indep: default-jdk
 Standards-Version: 3.8.0
 Homepage: http://visualdct.cosylab.com/
+Vcs-Git: https://github.com/epicsdeb/visualdct.git
+Vcs-Browser: https://github.com/epicsdeb/visualdct
 
 Package: visualdct
 Architecture: all
