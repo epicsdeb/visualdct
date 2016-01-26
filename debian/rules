@@ -1,19 +1,17 @@
 #!/usr/bin/make -f
 
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/ant.mk
+export DH_VERBOSE=1
 
 JAVA_HOME := /usr/lib/jvm/default-java
 
-DEB_ANT_BUILDFILE=VDCTBuild.xml
+DEB_VERSION = $(shell dpkg-parsechangelog | egrep '^Version:' | cut -f 2 -d ' ')
+DEB_NOEPOCH_VERSION = $(shell echo $(DEB_VERSION) | cut -d: -f2-)
 
-DEB_ANT_ARGS += -Dbuild.version="$(DEB_NOEPOCH_VERSION)"
+%:
+	dh $@ --with javahelper
 
-clean::
+override_dh_auto_build:
+	dh_auto_build -- -f VDCTBuild.xml -Dbuild.version="$(DEB_NOEPOCH_VERSION)"
+
+override_dh_auto_clean:
 	rm -rf build
-
-install/visualdct::
-	dh_install -v -p$(cdbs_curpkg) build/VisualDCT/$(DEB_NOEPOCH_VERSION)/VisualDCT.jar usr/share/visualdct
-	dh_install -v -p$(cdbs_curpkg) visualdct usr/bin
-	chmod +x debian/$(cdbs_curpkg)/usr/bin/visualdct
-	dh_link -p$(cdbs_curpkg) usr/bin/visualdct usr/bin/vdct

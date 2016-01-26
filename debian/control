@@ -2,7 +2,7 @@ Source: visualdct
 Section: misc
 Priority: optional
 Maintainer: Michael Davidsaver <mdavidsaver@bnl.gov>
-Build-Depends: cdbs, debhelper (>> 5), javahelper , ant
+Build-Depends: debhelper (>= 7), javahelper, ant,
 Build-Depends-Indep: default-jdk
 Standards-Version: 3.8.0
 Homepage: http://visualdct.cosylab.com/
