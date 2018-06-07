@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="../../Common/Documentation/Normal.xsl"?>
+
+<cosydoc xmlns="urn:schemas-cosylab-com:Document">
+
+<head>
+
+<title>VisualDCT Plugins</title>
+
+<info file="DOC-VisualDCT_Plugins"
+	url="http://visualdct.cosylab.com/builds/VisualDCT"
+	class="doc"
+	year="2002"
+	id="XX"
+	confidentiality="public"
+	project="VisualDCT"/>
+		  
+<contributor name="Sunil Sah" id="ssah" email="sunil.sah@cosylab.com"/>
+					 
+<modification version="1.0" by="ssah" date="2002-09-21">
+<section>Created.</section>
+</modification>
+
+<scope>
+This document contains information on writing plugins for VisualDCT and their installation.
+</scope>
+		
+<audience>
+The audience of this document are the users of VisualDCT who wish to create or use its plugins.
+</audience>
+
+<reference id="visualdct"
+	   title="VisualDCT Project"
+	   href="http://visualdct.cosylab.com/"
+	   author="Matej Sekoranja"
+	   date="2002"
+	   publisher="Cosylab, Ltd."/>
+		
+</head>
+
+<body>
+
+<section id="Introduction" title="Introduction">
+
+<p>
+This document is divided into three sections.
+The first describes how to create a VisualDCT plugin.
+The second explains how to include the parameters of the plugin and the information that is required by VisualDCT.
+The last section is about Plugin Manager, which can be used to install and manipulate the plugins within VisualDCT.
+</p>
+
+</section>
+
+<section id="Writing_plugins" title="Writing plugins">
+
+<p>
+For the resource to be used as a VisualDCT plugin, it must contain a class that implements the <i>Plugin</i> <kwd> interface</kwd>.
+Descriptions of specific methods are given below, followed by an example.
+</p>
+
+<section id="Plugin_interface" title="Plugin interface">
+
+<p>
+<i>Plugin</i> <kwd> interface</kwd> contains the following methods:
+</p>
+
+<ul>
+
+<li>
+<kwd>public void</kwd> <i> start()</i>: This method will be called at the time the plugin is started.
+</li>
+
+<li>
+<kwd>public void</kwd> <i> stop()</i>: This method will be called when the plugin is stopped.
+</li>
+
+<li>
+<kwd>public void</kwd> <i> destroy()</i>: This method will be called when the plugin is to be destroyed.
+</li>
+
+<li>
+<kwd>public</kwd> <i> String getAuthor()</i>: This method should return the <i>String</i> containing the name and/or e-mail address of the plugin author.
+</li>
+
+<li>
+<kwd>public</kwd> <i> String getDescription()</i>: This method should return the <i>String</i> containing a short description of the plugin.
+</li>
+
+<li>
+<kwd>public</kwd> <i> String getName()</i>: This method should return the <i>String</i> containing the name of the plugin.
+</li>
+
+<li>
+<kwd>public</kwd> <i> String getVersion()</i>: This method should return the <i>String</i> containing the plugin version number.
+</li>
+
+<li>
+<kwd>public void</kwd> <i> init(Properties properties, PluginContext context)</i>: This method is called when the plugin is initiated.
+The parameter <i>properties</i> contains the parameters of the plugin, while the <i>context</i> enables access to information on runtime environment.
+</li>
+
+</ul>
+
+</section>
+
+<section id="Example" title="Example">
+
+<p>
+This is an example of a plugin.
+When it is initiated, it checks the version of VisualDCT using the parameter <i>context</i>, and manipulates with its parameters using <i>properties</i>.
+</p>
+
+<code language="java">
+<![CDATA[
+import java.util.*;
+import com.cosylab.vdct.plugin.*;
+
+public class SimplePlugin implements Plugin
+{
+
+int interval = 0;
+
+public void start()
+{
+	System.out.println("SimplePlugin was started.");
+}
+
+public void stop()
+{
+	System.out.println("SimplePlugin was stopped.");
+}
+
+public void destroy()
+{
+	System.out.println("SimplePlugin was destroyed.");
+}
+
+public String getAuthor()
+{
+	return "sunil.sah@cosylab.com";
+}
+	
+public String getDescription()
+{
+	return "A simple plugin implementation.";
+}
+	
+public String getName()
+{
+	return "SimplePlugin";
+}
+	
+public String getVersion()
+{
+	return "1.0";
+}
+
+public void init(Properties properties, PluginContext context)
+{
+	// check for required version of VisualDCT
+	if(context.getVersion().compareTo("2.1") < 0)
+	{
+		System.out.println("SimplePlugin requires VisualDCT v2.1 or newer version.");
+		throw new Exception();
+	}
+
+	// read a property
+	String property = properties.get("interval").toString();
+	if(property != null)
+		interval = Integer.parseInt(property);
+
+	// set a new property, the time when SimplePlugin was last initiated
+	properties.put("lastrun", new Date().toString());
+}
+
+};
+]]>
+<desc>Example of a plugin</desc>
+</code>
+
+</section>
+
+<section id="Special_plugins" title="Special plugins">
+
+<p>
+There are currently three special types of plugins in VisualDCT:
+
+<ul>
+<li>com.cosylab.vdct.plugin.LinkTypeConfigPlugin</li>
+<li>com.cosylab.vdct.plugin.DebugPlugin</li>
+<li>com.cosylab.vdct.plugin.ExportPlugin</li>
+</ul>
+
+</p>
+
+</section>
+
+</section>
+
+<section id="Plugin_package" title="Plugin package">
+
+<p>
+VisualDCT plugins are distributed as Java Archive (<f>jar</f>) files.
+</p>
+
+<p>
+The <f>jar</f> file must include the following two files:
+<ul>
+
+<li>
+Java <f>class</f> file with the plugin implementation.
+</li>
+
+<li>
+<f>.vdctplugins.xml</f> file with the plugin information.
+</li>
+
+</ul>
+
+</p>
+
+<section id="Plugin_information" title="Plugin information">
+
+<p>
+The <f>.vdctplugins.xml</f> file includes the name of the plugin class, its autostart switch and optionally the parameters.
+It may contain information on multiple plugins.
+</p>
+
+<p>
+This in an example of <f>xml</f> file for the class named SimplePlugin.
+It will be started automatically by default, and has one parameter, <i>interval</i>, set to 1000.
+</p>
+
+<code language="xml">
+<![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE plugins SYSTEM 'com.cosylab.vdct:plugins'>
+
+<plugins>
+	<plugin class="SimplePlugin" autostart="true">
+		<param name="interval" value="1000" />
+	</plugin>
+</plugins>
+]]>
+</code>
+
+</section>
+
+</section>
+
+<section id="Plugin_Manager" title="Plugin Manager">
+
+<p>
+Plugin Manager is used for VisualDCT plugin management.
+It can be accessed by <m>Plugins</m>-<m>Plugin Manager...</m>.
+</p>
+
+<section id="Plugin_table" title="Plugin table">
+
+<p>
+Plugin table contains a list of currently installed plugins.
+The information of a plugin is divided into several columns:
+</p>
+
+<ol>
+
+<li>
+The <b>Autostart</b> column displays a checkbox indicating whether or not the plugin will automatically be started at the time the VisualDCT is started.
+See <a sref="Autostart_plugins">Autostart plugins</a> section for more information.
+</li>
+
+<li>
+The <b>Status</b> column displays the state of a plugin.
+It can be one of the following:
+
+<ul>
+<li>
+<b>Not loaded</b>: The plugin has not been loaded.
+</li>
+
+<li>
+<b>Loaded</b>: The plugin has been loaded.
+</li>
+
+<li>
+<b>Invalid</b>: The plugin could not have been initialized due to an error.
+</li>
+
+<li>
+<b>Initialized</b>: The plugin was initialized, but it has not been started.
+</li>
+
+<li>
+<b>Started</b>: The plugin was initialized and started.
+</li>
+
+<li>
+<b>Stopped</b>: The plugin was started, but it is currently stopped.
+</li>
+
+</ul>
+
+</li>
+
+<li>
+The <b>Name</b> column displays the plugin name.
+</li>
+
+<li>
+The <b>Version</b> column displays the current plugin's version number.
+</li>
+
+<li>
+The <b>Description</b> column displays a short description of the plugin.
+</li>
+
+<li>
+The <b>Author</b> column displays the e-mail address of the plugin's creator.
+</li>
+
+</ol>
+
+<figure id="plugin_manager.png">Plugin Manager</figure>
+
+</section>
+
+<section id="Plugin_management" title="Plugin management">
+
+<section id="Installing_new_plugins" title="Installing new plugins">
+
+<p>
+A new plugin can be installed by clicking on a <g>Install...</g> button, and then selecting the plugin's <f>jar</f> file.
+The <f>jar</f> must contain a <f>.vdctplugins.xml</f> file with the required information about the new plugin.
+</p>
+
+<p type="notice">
+The <f>jar</f> with the new plugin must be added to the classpath before it can be installed within the VisualDCT.
+</p>
+
+</section>
+
+<section id="Starting_and_stopping_plugins" title="Starting and stopping plugins">
+
+<p>
+To start or stop a specific plugin it must first be selected.
+To select a plugin in the table, move with the mouse cursor over it and press the left mouse button.
+</p>
+
+<p>
+When the plugin is selected, click on the <g>Start</g> button to start it, or the <g>Stop</g> button to stop it.
+</p>
+
+</section>
+
+<section id="Autostart_plugins" title="Autostart plugins">
+
+<p>
+Each plugin has an autostart switch.
+</p>
+
+<p>
+When VisualDCT is started, all installed plugins are initiated.
+Then, all plugins that have autostart switch enabled are automatically started.
+</p>
+
+<p>
+To change the autostart switch of a plugin, move the mouse cursor over its checkbox in the <b>Autostart</b> column, and press the left mouse button.
+The checkbox indicates the current status.
+</p>
+
+</section>
+
+<section id="Uninstalling_plugins" title="Uninstalling plugins">
+
+<p>
+To uninstall a plugin, select it in the table and press the <g>Uninstall</g> button.
+This will permanently uninstall the plugin.
+If you wish to restore the previous state, you have to re-install the plugin with the install command.
+</p>
+
+</section>
+
+<section id="Handling_multiple_plugins" title="Handling multiple plugins">
+
+<p>
+To perform an action on several plugins at once, these plugins must all be selected.
+</p>
+
+<p>
+To select a series of plugins, move the mouse cursor over the first one in the table, press and hold the left mouse button, drag the mouse to the last plugin, and release the button.
+To select specific plugins, hold down the <k>Ctrl</k> key, and click on them one after another.
+</p>
+
+</section>
+
+</section>
+
+</section>
+
+</body>
+
+</cosydoc>

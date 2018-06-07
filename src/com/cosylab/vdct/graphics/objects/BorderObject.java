@@ -17,7 +17,7 @@ package com.cosylab.vdct.graphics.objects;
  * <code>BorderObject</code> ...  DOCUMENT ME!
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
- * @version $Id: BorderObject.java 32749 2005-12-04 16:34:25Z jbobnar $
+ * @version $Id$
  * 
  * @since VERSION
  */

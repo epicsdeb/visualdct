@@ -1,0 +1,90 @@
+
+
+template("CosySupply demo") {
+}
+
+record(ai, "$(name):readback") {
+  field(INP, "$($(name):stepper01.newValue)")
+  field(EGU, "A")
+  field(HOPR, "10")
+  field(LOPR, "-10.0")
+}
+
+record(ai, "$(name):current") {
+  field(FLNK, "$(name):readbackCalc")
+  field(EGU, "A")
+  field(HOPR, "10.0")
+  field(LOPR, "-10.0")
+  field(PINI, "YES")
+}
+
+record(bi, "$(name):status") {
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(FLNK, "$(name):readbackCalc")
+  field(INP, "$(name):command")
+}
+
+record(bi, "$(name):command") {
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(FLNK, "$(name):status")
+  field(PINI, "YES")
+}
+
+record(calc, "$(name):readbackCalc") {
+  field(CALC, "(C>0)?(A+B):D")
+  field(INPA, "$($(name):gen01.noise)")
+  field(INPB, "$(name):current")
+  field(INPC, "$(name):status.VAL")
+  field(INPD, "0.0")
+}
+
+expand("cosyNoiseGenerator.vdb", "$(name):gen01") {
+  macro(stepping, "0.3")
+  macro(divider, "4")
+  macro(noiseGen, "gen01")
+  macro(process, "$(name):readbackCalc")
+}
+
+expand("cosyStepper.vdb", "$(name):stepper01") {
+  macro(stepper, "stepper01")
+  macro(stepping, "0.25")
+  macro(process, "$(name):readback")
+  macro(value, "$(name):readback")
+  macro(setValue, "$(name):readbackCalc")
+}
+
+#! Further lines contain data used by VisualDCT
+#! Record("$(name):readback",2740,1880,16777215,0,"$(name):readback")
+#! Field("$(name):readback.INP",16777215,0,"$(name):readback.INP")
+#! Link("$(name):readback.INP","$($(name):stepper01.newValue)")
+#! Record("$(name):current",1920,1460,0,1,"$(name):current")
+#! Field("$(name):current.FLNK",16777215,1,"$(name):current.FLNK")
+#! Link("$(name):current.FLNK","current/FLNK")
+#! Field("$(name):current.VAL",16777215,1,"$(name):current.VAL")
+#! Connector("current/FLNK","$(name):readbackCalc",2260,1720,16777215,"",0)
+#! Record("$(name):status",2000,2180,16777215,0,"$(name):status")
+#! Field("$(name):status.FLNK",16777215,1,"$(name):status.FLNK")
+#! Link("$(name):status.FLNK","status/FLNK")
+#! Field("$(name):status.INP",16777215,0,"$(name):status.INP")
+#! Link("$(name):status.INP","$(name):command.VAL")
+#! Connector("status/FLNK","$(name):readbackCalc",2260,2060,16777215,"",0)
+#! Record("$(name):command",1600,2060,0,1,"$(name):command")
+#! Field("$(name):command.FLNK",16777215,1,"$(name):command.FLNK")
+#! Link("$(name):command.FLNK","$(name):status")
+#! Field("$(name):command.VAL",16777215,1,"$(name):command.VAL")
+#! Record("$(name):readbackCalc",2360,1740,16777215,0,"$(name):readbackCalc")
+#! Field("$(name):readbackCalc.INPA",16777215,0,"$(name):readbackCalc.INPA")
+#! Link("$(name):readbackCalc.INPA","$($(name):gen01.noise)")
+#! Field("$(name):readbackCalc.INPB",16777215,0,"$(name):readbackCalc.INPB")
+#! Link("$(name):readbackCalc.INPB","$(name):current.VAL")
+#! Field("$(name):readbackCalc.INPC",16777215,0,"$(name):readbackCalc.INPC")
+#! Link("$(name):readbackCalc.INPC","readbackCalc/INPC")
+#! Connector("readbackCalc/INPC",null,2280,2140,16777215,"",0)
+
+#! TemplateInstance("$(name):gen01",1840,1700,0,"")
+
+
+#! TemplateInstance("$(name):stepper01",2400,2040,0,"")
+

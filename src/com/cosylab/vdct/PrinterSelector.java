@@ -33,7 +33,7 @@ import javax.swing.JPanel;
  * It enables selection of a certain PrintService and its distribution to its requestor.
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
- * @version $Id: PrinterSelector.java 32739 2005-11-01 16:26:28Z jbobnar $
+ * @version $Id$
  * 
  * @since VERSION
  */

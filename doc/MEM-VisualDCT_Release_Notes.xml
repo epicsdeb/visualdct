@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="../../Common/Documentation/Normal.xsl"?>
+
+<cosydoc xmlns="urn:schemas-cosylab-com:Document">
+	<head>
+		<title>VisualDCT Release Notes</title>
+		
+		<info file="MEM-VisualDCT_Release_Notes"
+			  url="http://visualdct.cosylab.com/builds/VisualDCT"
+			  class="mem"
+			  year="2002"
+			  id="XX"
+			  confidentiality="public"
+			  project="VisualDCT"/>
+			  
+		<contributor name="Matej Sekoranja"
+				id="msekoranja"
+				email="matej.sekoranja@cosylab.com"/>
+
+		<modification version="2.2.1236" by="msekoranja" date="2002-08-20">
+			<section>Package B alpha integration build.</section>
+		</modification>
+
+		<modification version="2.3.1237" by="msekoranja" date="2002-10-20">
+			<section>Package B release candidate.</section>
+		</modification>
+
+		<modification version="2.4.1244" by="msekoranja" date="2003-07-18">
+			<section>Package C (full graphical hierarchy support) release candidate.</section>
+		</modification>
+
+		<modification version="2.4.1247" by="msekoranja" date="2003-12-28">
+			<section>Minor bugfixes.</section>
+		</modification>
+
+		<modification version="2.4.1249" by="msekoranja" date="2004-03-30">
+			<section>CapFast interoperability, minor bugfixes.</section>
+		</modification>
+
+		<modification version="2.4.1250" by="msekoranja" date="2004-08-30">
+			<section>Package D1 release candidate.</section>
+		</modification>
+
+		<modification version="2.4.1256" by="msekoranja" date="2004-11-18">
+			<section>Package D2 pre-release.</section>
+		</modification>
+
+                <modification version="2.4.1257" by="msekoranja" date="2005-05-27">
+                        <section>Package D2 release.</section>
+                </modification>
+
+		<modification version="2.5.1271" by="msekoranja" date="2004-11-18">
+			<section>Package F release.</section>
+		</modification>
+
+		<scope>
+			This document is contains release notes of the current build.
+		</scope>
+		
+		<audience>
+			The audience of this document are all users of this VisualDCT build.
+		</audience>
+		
+		<reference id="visualdct"
+			   title="VisualDCT Project"
+			   href="http://visualdct.cosylab.com/"
+			   author="Matej Sekoranja"
+			   date="2002"
+			   publisher="Cosylab, Ltd."/>
+			   
+		<reference id="visualdct_latest"
+			   title="VisualDCT latest build"
+			   href="http://visualdct.cosylab.com/builds/VisualDCT/"
+			   author="Matej Sekoranja"
+			   date="2005"
+			   publisher="Cosylab, Ltd."
+			   revision="2.5.1271"/>
+
+	</head>
+	
+	<body>
+		<section id="noted" title="Release Notes">
+			<p>
+			Changes in current version:
+<pre>
+1. VISUALDCT V2.6 BUILD1274
+
+1.1. OVERVIEW
+VisualDCT package E (previouse version) implements advanced spreadseet support (try "View->Spreadsheet...").
+VisualDCT package F implements basic multiple database file editing support.
+Multiple db files are displayed using internal frames and support clipboard operations among them.
+
+
+2. KNOWN ISSUES AND WORKAROUNDS
+
+2.1. LIMITED GLOBAL OVERVIEW OF THE OPENED FILES
+Most of the VDCT functionality, including spreadsheet view, search, inspectors and linking, works on the currently focused db.
+More time needs to be spent on defining cross db use-cases to implement a more general and useful framework.
+
+2.2. MACRO AND PORT CLIPBOARD OPERATIONS ARE NOT SUPPORTED
+Macro and port objects for a template currently do not work correctly using cut/copy/paste operations.
+The macros and ports should be added and removed using the popup menu. 
+
+2.3. THE WORKSPACE BLINKS WHEN THE MAIN FRAME IS RESIZED
+This seems to be an issue with Java rendering engine. A workaround is to upgrade to Java 1.6. 
+
+2.4. SPREADSHEET DRAG AND DROP OPERATIONS BLOCK FOR 10 SECONDS OR MORE
+This is an issue with older java 1.4 releases. To resolve this update your java 1.4 version to the latest (java 1.4.2_16).
+
+2.5. OTHER ISSUES
+o) loading a view while having another open at non-default zoom resets the zoom on that window
+o) undoing port creation leaves the port in the template definitions
+o) the internal frame is not redrawn after created or resize operation (Java 1.6 has this resolved)
+o) plugins might need to be fixed for this version
+</pre>
+</p>
+			<p>
+			Disabilities/missing:
+			<ul>
+			  <li><kwd>include</kwd> statement is implemented, but saving files containing <kwd>include</kwd> statements 
+			  	   will also include all the content of includes files.</li>
+			  <li>multiple template definitions in one DB are not supported</li>
+			  <li>user's manual to be completed</li>
+			</ul>
+			</p>
+			<p>
+			</p>
+		</section>
+	</body>
+</cosydoc>

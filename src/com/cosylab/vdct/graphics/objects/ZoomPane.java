@@ -28,7 +28,7 @@ import com.cosylab.vdct.graphics.ViewState;
  * the image containing zoomed objects in scale 1.0;
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
- * @version $Id: ZoomPane.java 32835 2008-06-12 14:09:46Z ssah $
+ * @version $Id$
  * 
  * @since VERSION
  */
