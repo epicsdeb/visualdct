@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>Visual DCT</name>
+    <description>
+        EPICS Visual Database Configuration Tool.
+        Developed by Cosylab, funded by SLS, APS, Diamond and SNS.
+    </description>
+    <inceptionYear>2002</inceptionYear>
+
+    <organization>
+        <name>Cosylab</name>
+        <url>http://www.cosylab.com/</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>Matej Sekoranja</name>
+            <email>matej.sekoranja@cosylab.com</email>
+        </developer>
+        <developer>
+            <name>Jaka Bobnar</name>
+            <email>jaka.bobnar@cosylab.com</email>
+        </developer>
+        <developer>
+            <name>Sunil Sah</name>
+            <email>sunil.sah@cosylab.com</email>
+        </developer>
+    </developers>
+
+    <url>https://github.com/epics-extensions/VisualDCT</url>
+    <scm>
+        <connection>scm:git:https://github.com/epics-extensions/VisualDCT.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/epics-extensions/VisualDCT.git</developerConnection>
+        <url>https://github.com/epics-extensions/VisualDCT</url>
+        <tag>v2.6.1280</tag>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/epics-extensions/VisualDCT/issues</url>
+    </issueManagement>
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>https://openepics.ci.cloudbees.com/view/EPICS%20Extensions/</url>
+    </ciManagement>
+
+    <groupId>com.cosylab.vdct</groupId>
+    <artifactId>VisualDCT</artifactId>
+    <version>2.6.1280</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.cosylab.vdct.VisualDCT</mainClass>
+                            <addDefaultImplementationEntries>
+                                true
+                            </addDefaultImplementationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.3</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/assembly/dist.xml</descriptor>
+                    </descriptors>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.5</version>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-scm-publish-plugin</artifactId>
+                <version>1.1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <content>${project.build.directory}/site</content>
+                    <scmBranch>gh-pages</scmBranch>
+                    <pubScmUrl>${project.scm.developerConnection}</pubScmUrl>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/resources</directory>
+            </resource>
+        </resources>
+    </build>
+
+    <reporting>
+        <plugins>
+
+            <plugin>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.9</version>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.3</version>
+                <reportSets>
+                    <reportSet>
+                        <id>html</id>
+                        <reports>
+                            <report>javadoc</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+
+        </plugins>
+    </reporting>
+
+</project>
