@@ -17,7 +17,7 @@ package com.cosylab.vdct;
  * <code>Help</code> ...  DOCUMENT ME!
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
- * @version $Id: Help.java 32708 2005-09-28 19:59:22Z jbobnar $
+ * @version $Id$
  * 
  * @since VERSION
  */

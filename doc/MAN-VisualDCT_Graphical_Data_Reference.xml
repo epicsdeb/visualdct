@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="../../Common/Documentation/Normal.xsl"?>
+
+<cosydoc xmlns="urn:schemas-cosylab-com:Document">
+	<head>
+		<title>VisualDCT Graphical Data Reference</title>
+		
+		<info file="MAN-VisualDCT_Graphical_Data_Reference.xml"
+			  url="http://visualdct.cosylab.com/builds/VisualDCT"
+			  class="man"
+			  year="2002"
+			  id="xxxxxx"
+			  confidentiality="public"
+			  project="VisualDCT"/>
+			  
+		<contributor name="Matej Sekoranja"
+				id="msekoranja"
+				email="matej.sekoranja@cosylab.com"/>
+
+		<modification version="0.9" by="msekoranja" date="2002-10-19">
+			<section>Created.</section>
+		</modification>
+
+		<modification version="1.0" by="msekoranja" date="2003-07-18">
+			<section>Added hierarchy related data.</section>
+		</modification>
+
+		<scope>
+			This document specifies how VisualDCT stores its visual data about graphics layout.
+		</scope>
+		
+		<audience>
+			The audience of this document are all developers of EPICS tools wishing to create visual VisualDCT EPICS databases.
+		</audience>
+		
+		<reference id="visualdct"
+			   title="VisualDCT Project"
+			   href="http://visualdct.cosylab.com/"
+			   author="Matej Sekoranja"
+			   date="2002"
+			   publisher="Cosylab, Ltd."/>
+			   
+		<reference id="visualdct_latest"
+			   title="VisualDCT latest build"
+			   href="http://visualdct.cosylab.com/builds/VisualDCT/"
+			   author="Matej Sekoranja"
+			   date="2002"
+			   publisher="Cosylab, Ltd."
+			   revision="2.3.1237"/>
+
+	</head>
+	
+	<body>
+		<section id="intro" title="Introduction">
+			<p>
+			VisualDCT creates and maintains only one file, the record instance database (<f>.db</f> or <f>.vdb</f>) file,
+			and does not have any additional graphical information file avoiding any possible consistency problems
+			when having multiple files, all necessary visual composition data is stored as comments at the end
+			of the DB file.<br/>
+			All visual VisualDCT data begin with <i>#!</i> prefix.
+			</p>
+		</section>
+
+		<section id="reference" title="Reference">
+		
+		   <section id="datatypes" title="Data Types">
+			   <ul>
+			     <li><em><b>color</b></em> - RGB value representing the color (bits 24-31 are alpha, 16-23 are red, 8-15 are green, 0-7 are blue).</li>
+			     <li><em><b>boolean types</b></em> - false if 0, true otherwise.</li>
+			   </ul>
+		   </section>
+		   
+		   <section id="epicsObjects" title="EPICS Objects">
+		   
+			<section id="record" title="Record">
+				<code language="VisualDCT" id="recordRef">
+				  <desc>Record visual data</desc><![CDATA[
+			#! Record("recordname", xpos, ypos, color, rotated, "description")]]>
+				</code>
+			</section>
+
+			<section id="group" title="Group">
+				<code language="VisualDCT" id="groupRef">
+				  <desc>Group visual data</desc><![CDATA[
+			#! Group("groupname", xpos, ypos, color, "description")]]>
+				</code>
+			</section>
+
+			<section id="field" title="Field">
+				<code language="VisualDCT" id="fieldRef">
+				  <desc>Field visual data</desc><![CDATA[
+			#! Field("fieldname", color, rotated, "description")]]>
+				</code>
+			</section>
+
+			<section id="visibility" title="Visibility">
+				<code language="VisualDCT" id="visibilityRef">
+				  <desc>Visibility visual data</desc><![CDATA[
+			#! Visibility("fieldname", visibility)]]>
+			
+			visibility:
+				0 - NON_DEFAULT_VISIBLE
+				1 - ALWAYS_VISIBLE
+				2 - NEVER_VISIBLE</code>
+			</section>
+
+			<section id="link" title="Link">
+				<code language="VisualDCT" id="linkRef">
+				  <desc>Link visual data</desc><![CDATA[
+			#! Link("fieldname", inLinkID)]]>
+				</code>
+			</section>
+
+			<section id="connector" title="Connector">
+				<code language="VisualDCT" id="connectorRef">
+				  <desc>Connector visual data</desc><![CDATA[
+			#! Connector("inLinkID", outLinkID, xpos, ypos, color, "description")]]>
+				</code>
+			</section>
+
+			<section id="template" title="Template">
+				<code language="VisualDCT" id="templateRef">
+				  <desc>Template visual data</desc><![CDATA[
+			#! TemplateInstance("id", x, y, color, "desc")]]>
+				</code>
+			</section>
+
+			<section id="templateField" title="Template Field">
+				<code language="VisualDCT" id="templateFieldRef">
+				  <desc>Template field visual data</desc><![CDATA[
+			#! TemplateField("template instance id", "fieldName", color, isRight, visibility)]]>
+				</code>
+			</section>
+
+			<section id="ports" title="Ports">
+				<code language="VisualDCT" id="portsRef">
+				  <desc>Ports field visual data</desc><![CDATA[
+			#! ConstantPort(portname, inLinkID, xpos, ypos, color, defaultVisibility)
+			#! InputPort(portname, inLinkID, xpos, ypos, color, defaultVisibility)
+			#! OutputPort(portname, inLinkID, xpos, ypos, color, defaultVisibility)]]>
+				</code>
+			</section>
+
+			<section id="macros" title="Macros">
+				<code language="VisualDCT" id="macrosRef">
+				  <desc>Macros field visual data</desc><![CDATA[
+			#! InputMacro(macroname, description, xpos, ypos, color, defaultVisibility, textPositionNorth)
+			#! OutputMacro(macroname, description, xpos, ypos, color, defaultVisibility, textPositionNorth)]]>
+				</code>
+			</section>
+
+		   </section>
+
+		   <section id="graphicalObjects" title="Graphical Objects">
+
+			<section id="line" title="Line/Arrow">
+				<code language="VisualDCT" id="lineRef">
+				  <desc>Line/Arrow visual data</desc><![CDATA[
+			#! Line(id, xpos, ypos, xpos2, ypos2, dashed, startArrow, endArrow, color, parentBorderID)]]>
+				</code>
+			</section>
+			
+			<section id="box" title="Box">
+				<code language="VisualDCT" id="boxRef">
+				  <desc>Box visual data</desc><![CDATA[
+			#! Box(id, xpos, ypos, xpos2, ypos2, dashed, color, parentBorderID)]]>
+				</code>
+			</section>
+
+			<section id="textBox" title="TextBox">
+				<code language="VisualDCT" id="textBoxRef">
+				  <desc>TextBox visual data</desc><![CDATA[
+			#! TextBox(id, xpos, ypos, xpos2, ypos2, border, fontFamilyName, fontSize, fontStyle, color, "text", parentBorderID)]]>
+				</code>
+			</section>
+
+		   </section>
+		   
+		   <section id="dbd" title="DBD Info Block">
+
+			<section id="dbd" title="DBD Info Block">
+				<code language="VisualDCT" id="dbdRef">
+				  <desc>DBD Info Block visual data</desc><![CDATA[
+			#! DBDSTART
+			#! DBD("DBD filename1")
+			...
+			#! DBD("DBD filenameN")
+			#! DBDEND]]>
+				</code>
+			</section>
+	
+		   </section>
+		   
+		   <section id="misc" title="Miscellaneous">
+
+			<section id="skip" title="Skip">
+				<code language="VisualDCT" id="skipRef">
+				  <desc>Skip visual data</desc><![CDATA[
+			// skip one line
+			#! SKIP
+			
+			// skip n lines
+ 			#! SKIP(number of lines)]]>
+				</code>
+			</section>
+	
+			<section id="view" title="View">
+				<code language="VisualDCT" id="viewRef">
+				  <desc>Workspace view</desc><![CDATA[
+			#! View(xoffset, yoffset, scale)]]>
+				</code>
+			</section>
+
+		   </section>
+
+
+		</section>
+		
+		<section id="conclusion" title="Conclusion">
+			<p>
+				This document will probably change in it the future.
+			</p>
+		</section>
+	</body>
+</cosydoc>

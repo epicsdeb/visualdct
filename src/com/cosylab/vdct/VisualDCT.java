@@ -50,6 +50,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.Vector;
 
 import javax.print.Doc;
 import javax.print.DocFlavor;
@@ -6164,8 +6165,8 @@ public static void main(final java.lang.String[] args) {
 				try {
 					
 		/* Create the frame */
-        JFrame.setDefaultLookAndFeelDecorated(true);
-        JDialog.setDefaultLookAndFeelDecorated(true);
+       // JFrame.setDefaultLookAndFeelDecorated(true);
+        //JDialog.setDefaultLookAndFeelDecorated(true);
 		final VisualDCT aVisualDCT = new VisualDCT();
 		aVisualDCT.setSize(Constants.VDCT_WIDTH, Constants.VDCT_HEIGHT);
 		aVisualDCT.getworkspace();
@@ -6564,8 +6565,15 @@ public boolean openDBD(String fileName, boolean allowDB) {
 
 		if (!allowDB || theFile.getName().toUpperCase().endsWith("DBD")) {
 			DBDEntry entry = new DBDEntry(theFile.getPath());
-			DataProvider.getInstance().getCurrentDBDs().add(entry);
-			cmd.getGUIMenuInterface().openDBD(entry.getFile()); 
+			Vector v = DataProvider.getInstance().getCurrentDBDs();
+			if (v.isEmpty()) {
+			    //if this is the first entry being added, open it
+			    cmd.getGUIMenuInterface().openDBD(entry.getFile());
+			} else {
+			    //if not the first one, import it.
+			    cmd.getGUIMenuInterface().importDBD(entry.getFile());
+			}
+			v.add(entry);
 		}
 		else if (allowDB)
 			cmd.getGUIMenuInterface().openDB(theFile);

@@ -1,0 +1,1 @@
+java -cp VisualDCT.jar com.cosylab.vdct.GenerateFlatDatabase $*

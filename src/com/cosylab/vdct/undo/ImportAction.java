@@ -23,7 +23,7 @@ import com.cosylab.vdct.graphics.objects.VisibleObject;
  * <code>ImportAction</code> ...  DOCUMENT ME!
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
- * @version $Id: ImportAction.java 32841 2008-06-30 19:50:45Z ssah $
+ * @version $Id$
  * 
  * @since VERSION
  */

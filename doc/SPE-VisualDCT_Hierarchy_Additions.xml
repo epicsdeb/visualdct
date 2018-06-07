@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="../../Common/Documentation/Normal.xsl"?>
+
+<cosydoc xmlns="urn:schemas-cosylab-com:Document">
+	<head>
+		<title>VisualDCT Hierarchy Additions</title>
+		
+		<info file="SPE-VisualDCT_Hierarchy_Additions"
+			  url="http://visualdct.cosylab.com/builds/VisualDCT"
+			  class="spe"
+			  year="2002"
+			  id="XX"
+			  confidentiality="public"
+			  project="VisualDCT"/>
+			  
+		<contributor name="Andrew Johnson"
+				id="ajohnson"
+				email="anj@aps.anl.gov"/>
+
+		<contributor name="John Maclean"
+				id="jmaclean"
+				email="jfm@aps.anl.gov"/>
+
+		<contributor name="Rozelle Wright"
+				id="rwright"
+				email="rwright@lanl.gov"/>
+
+		<contributor name="Matej Sekoranja"
+				id="msekoranja"
+				email="matej.sekoranja@cosylab.com"/>
+
+		<modification version="1.0" by="msekoranja" date="2002-11-26">
+			<section>Created.</section>
+		</modification>
+
+		<modification version="1.1" by="msekoranja" date="2003-07-18">
+			<section>Updated to reflect implementation.</section>
+		</modification>
+
+		<scope>
+			This document specifies further additions to the hierarchy mechanism of VisualDCT to be implemented in the future releases.
+			<p>
+			The document is based on discussion between Andrew Johnson, John Maclean, Rozelle Wright and Matej Sekoranja held at APS on 25th November 2002.
+			</p>
+		</scope>
+		
+		<audience>
+			The audience of this document are all EPICS DB developers and users.
+		</audience>
+		
+		<reference id="visualdct"
+			   title="VisualDCT Project"
+			   href="http://visualdct.cosylab.com/"
+			   author="Matej Sekoranja"
+			   date="2002"
+			   publisher="Cosylab, Ltd." />
+
+		<reference id="hierarchies"
+			   title="VisualDCT EPICS Databases Hierarchy Support"
+			   href="http://visualdct.cosylab.com/"
+			   author="Matej Sekoranja"
+			   date="2002"
+			   publisher="Cosylab, Ltd." />
+
+	</head>
+	
+	
+	<body>
+		<section id="symbol" title="Template instance symbol">
+			<p>
+			After implementing new additions template instance symbol should look like this:
+			</p>
+			<figure id="template.png">Template instance symbol</figure>
+			<comment by="msekoranja">I find having 2 columns (sides) very useful - to separate inputs (left size) from outputs (right side).</comment>
+		</section>
+		<section id="ports" title="Ports">
+			<p>
+				Ports are used to pass information upwards out of a template instance to their calling database (to higher level), i.e. taking a string (link name or constant) out of a template instance.
+			</p>
+			<p>
+			All additional visual data used by VisualDCT is stored as comments in the template block statement.
+			</p>
+			<section id="portsll" title="Lower Level">
+				<p>
+				All ports have to be defined in the lower level schamantics. Just after creating a new port, done simply by mouse clicking, user has to determine the type of the port.
+				<br/>
+				There are three different port types:
+				</p>
+				<ul>
+				  <li><img src="SPE-VisualDCT_Hierarchy_Additions/inport.png"/><b>INPUT</b> - port passing a name of <kwd>INPUT</kwd> type field.</li>
+				  <li><img src="SPE-VisualDCT_Hierarchy_Additions/outport.png"/><b>OUTPUT</b> - port passing a name of <kwd>OUTPUT</kwd> type field.</li>
+				  <li><img src="SPE-VisualDCT_Hierarchy_Additions/constport.png"/><b>CONSTANT</b> - port passing a constant value.</li>
+				</ul>
+				<p>
+				There should also be a possiblity of defining a default state port vislibility (inspector, context sensitive pop-up menu).
+				</p>
+				<comment by="msekoranja">To provide possibility of definining kind of a function (e.g. <kwd>"(field name) PP"</kwd>), VDCT data should look like this:
+					<code language="VDCT" id="visdefport"><![CDATA[
+	port("port name", "expression", "desc")
+	#! InputPort("port name", "target field name", xpos, ypos, colour, defaultVisibility)]]>
+					  <desc>Visual definition of a port.</desc>
+					</code>
+				</comment>
+			</section>
+			<section id="portshl" title="Higher Level">
+				<p>
+				At the higher level ports are represented as shown in section <a aref="symbol">Template instance symbol</a>.
+				</p>
+				<p>
+				In the inspector user has to have the availability of overriding the default visibility of the ports.
+				</p>
+			</section>
+		</section>
+
+		<section id="macros" title="Macros">
+			<p>
+				Macros are used to pass information downwards into a template instance from their calling database (from higher level), i.e. taking a string (link name or constant) into a template instance.
+			</p>
+			<section id="macrosll" title="Lower Level">
+				<p>
+				To have macros visible as links in the higher level, they have to be to be defined in the lower level schamantics. Just after creating a new macro, done simply by mouse clicking, user has to determine the type of the macro.
+				<br/>
+				There are two different macro types:
+				</p>
+				<ul>
+				  <li><img src="SPE-VisualDCT_Hierarchy_Additions/inmacro.png"/><b>INPUT</b> - macro passing a name of <kwd>INPUT</kwd> type field.</li>
+				  <li><img src="SPE-VisualDCT_Hierarchy_Additions/outmacro.png"/><b>OUTPUT</b> - macro passing a name of <kwd>OUTPUT</kwd> type field.</li>
+				</ul>
+				<p>
+				There should also be a possiblity of defining a default state macro vislibility (inspector, context sensitive pop-up menu).
+				</p>
+				<comment by="msekoranja">VDCT data should look like this:
+					<code language="VDCT" id="visdefmacro"><![CDATA[
+	macro("macro name", "expression")   // defined in the higher level
+	#! InputMacro("macro name", description, xpos, ypos, colour, defaultVisibility)]]>
+					  <desc>Visual definition of a macro.</desc>
+					</code>
+				</comment>
+			</section>
+			<section id="macroshl" title="Higher Level">
+				<p>
+				At the higher level ports are represented as shown in section <a aref="symbol">Template instance symbol</a>.
+				</p>
+				<p>
+				In the inspector user has to have the availability of overriding the default visibility of the ports.
+				</p>
+				<p>
+				Creating an ordinary macro (substitution variable), <b>CONSTANT</b> macro,  can easily achieved by using inspector.
+				</p>
+			</section>
+		</section>
+	</body>
+</cosydoc>

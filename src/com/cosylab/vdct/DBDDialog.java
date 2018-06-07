@@ -713,16 +713,21 @@ public static void main(java.lang.String[] args) {
  * Comment
  */
 public void removeDBDButton_ActionPerformed(java.awt.event.ActionEvent actionEvent) {
-	java.util.Vector dbds = DataProvider.getInstance().getCurrentDBDs();
-
 	int[] selected = getScrollPaneTable().getSelectedRows();
-	Object[] objs = new Object[selected.length];
-	for (int i=0; i < selected.length; i++)
-		objs[i] = dbds.get(selected[i]);
-		
-	for (int i=0; i < objs.length; i++)
-		dbds.removeElement(objs[i]);
-		
+	java.util.Vector dbds = DataProvider.getInstance().getCurrentDBDs();
+	removeFromDBDList(dbds,selected);
+	dbds = DataProvider.getInstance().getLoadedDBDs();
+	removeFromDBDList(dbds,selected);
+	
 	getScrollPaneTable().tableChanged(new TableModelEvent(getScrollPaneTable().getModel()));
+}
+
+private void removeFromDBDList(Vector dbds, int[] selected) {
+    Object[] objs = new Object[selected.length];
+    for (int i=0; i < selected.length; i++)
+        objs[i] = dbds.get(selected[i]);
+        
+    for (int i=0; i < objs.length; i++)
+        dbds.removeElement(objs[i]);
 }
 }
