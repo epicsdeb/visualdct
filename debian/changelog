@@ -1,3 +1,10 @@
+visualdct (2.6.1279-1) unstable; urgency=medium
+
+  * New upstream version 2.6.1279
+  * set compat level to 9
+
+ -- Christoph Schröder <christoph.schroeder@helmholtz-berlin.de>  Thu, 07 Jun 2018 10:17:54 +0200
+
 visualdct (2.6.1278-3) unstable; urgency=medium
 
   * Fix build dep. to be default-jdk
