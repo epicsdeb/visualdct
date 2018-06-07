@@ -1,0 +1,19 @@
+From: =?utf-8?q?Christoph_Schr=C3=B6der?=
+ <christoph.schroeder@helmholtz-berlin.de>
+Date: Thu, 7 Jun 2018 16:21:03 +0200
+Subject: add startup script
+
+---
+ visualdct | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 visualdct
+
+diff --git a/visualdct b/visualdct
+new file mode 100644
+index 0000000..3632bfa
+--- /dev/null
++++ b/visualdct
+@@ -0,0 +1,3 @@
++#!/bin/sh
++
++exec java -jar /usr/share/visualdct/VisualDCT.jar "$@"

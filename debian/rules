@@ -1,17 +1,16 @@
 #!/usr/bin/make -f
 
 export DH_VERBOSE=1
-
-JAVA_HOME := /usr/lib/jvm/default-java
-
-DEB_VERSION = $(shell dpkg-parsechangelog | egrep '^Version:' | cut -f 2 -d ' ')
-DEB_NOEPOCH_VERSION = $(shell echo $(DEB_VERSION) | cut -d: -f2-)
+export DEB_VERSION := $(shell dpkg-parsechangelog | egrep '^Version:' | cut -f 2 -d ' ')
+export DEB_NOEPOCH_VERSION := $(shell echo $(DEB_VERSION) | cut -d: -f2-)
+export DEB_UPSTREAM_VERSION := $(shell echo $(DEB_NOEPOCH_VERSION) | sed 's/-[^-]*$$//')
 
 %:
-	dh $@ --with javahelper
+	dh $@
 
-override_dh_auto_build:
-	dh_auto_build -- -f VDCTBuild.xml -Dbuild.version="$(DEB_NOEPOCH_VERSION)"
-
-override_dh_auto_clean:
-	rm -rf build
+override_dh_auto_install:
+	dh_install visualdct usr/bin/
+	dh_install VisualDCT-*.jar usr/share/visualdct/
+	dh_link usr/bin/visualdct usr/bin/vdct
+	dh_link usr/share/visualdct/VisualDCT-$(DEB_UPSTREAM_VERSION).jar usr/share/visualdct/VisualDCT.jar
+	dh_auto_install
