@@ -1,3 +1,10 @@
+visualdct (2.6.1280-1) unstable; urgency=medium
+
+  * New upstream version 2.6.1280
+  * update packaging for prebuild releases
+
+ -- Christoph Schröder <christoph.schroeder@helmholtz-berlin.de>  Fri, 08 Jun 2018 14:27:52 +0200
+
 visualdct (2.6.1279-1) unstable; urgency=medium
 
   * New upstream version 2.6.1279
