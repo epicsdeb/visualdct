@@ -68,7 +68,7 @@
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/LinkManagerObject.html">LinkManagerObject</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/ContainerObject.html">ContainerObject</a> <strong class="jxr_keyword">implements</strong> Hub, Inspectable, <a href="../../../../../com/cosylab/vdct/graphics/popup/Popupable.html">Popupable</a> {
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>  
-<a class="jxr_linenumber" name="L63" href="#L63">63</a>  	<strong class="jxr_keyword">class</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/Line.html">PopupMenuHandler</a> <strong class="jxr_keyword">implements</strong> ActionListener {
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>  	<strong class="jxr_keyword">class</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/Connector.html">PopupMenuHandler</a> <strong class="jxr_keyword">implements</strong> ActionListener {
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>  		<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> actionPerformed(ActionEvent e) {
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>  		    LinkCommand cmd = (LinkCommand)CommandManager.getInstance().getCommand(<span class="jxr_string">"LinkCommand"</span>);
 <a class="jxr_linenumber" name="L66" href="#L66">66</a>  		    cmd.setData(LinkManagerObject.<strong class="jxr_keyword">this</strong>, LinkManagerObject.<strong class="jxr_keyword">this</strong>.getField(e.getActionCommand()));
@@ -778,7 +778,7 @@
 <a class="jxr_linenumber" name="L770" href="#L770">770</a> <em class="jxr_javadoccomment"> * @return com.cosylab.vdct.graphics.objects.LinkManagerObject.PopupMenuHandler</em>
 <a class="jxr_linenumber" name="L771" href="#L771">771</a> <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L772" href="#L772">772</a> <strong class="jxr_keyword">private</strong> com.cosylab.vdct.graphics.objects.LinkManagerObject.PopupMenuHandler createPopupmenuHandler() {
-<a class="jxr_linenumber" name="L773" href="#L773">773</a> 	<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/Line.html">PopupMenuHandler</a>();
+<a class="jxr_linenumber" name="L773" href="#L773">773</a> 	<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/Connector.html">PopupMenuHandler</a>();
 <a class="jxr_linenumber" name="L774" href="#L774">774</a> }
 <a class="jxr_linenumber" name="L775" href="#L775">775</a> 
 <a class="jxr_linenumber" name="L776" href="#L776">776</a> <em class="jxr_javadoccomment">/**</em>
@@ -959,6 +959,6 @@
 <a class="jxr_linenumber" name="L951" href="#L951">951</a> }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2002&#x2013;2016 <a href="http://www.cosylab.com/">Cosylab</a>. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2002&#x2013;2018 <a href="http://www.cosylab.com/">Cosylab</a>. All rights reserved.</div>
 </body>
 </html>
