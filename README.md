@@ -1,7 +1,7 @@
 # VisualDCT (aka VDCT) [![Build Status](https://travis-ci.org/epics-extensions/VisualDCT.svg?branch=master)](https://travis-ci.org/epics-extensions/VisualDCT)
 
 VisualDCT is the Visual Database Configuration Tool for
-[EPICS](http://www.aps.anl.gov/epics/) Databases.
+[EPICS](https://epics.anl.gov/) Databases.
 
 It was developed by [Cosylab](http://www.cosylab.com/).
 This development was funded by SLS, APS, Diamond and SNS. 
@@ -13,14 +13,14 @@ including user manuals, release notes, reference and project documentation.
 
 There are two versions available on-line:
 
- * [latest release](http://epics-extensions.github.io/VisualDCT/)
+ * [latest release](https://epics-extensions.github.io/VisualDCT/)
  * [development version](https://openepics.ci.cloudbees.com/job/ext-VisualDCT-master-site/site/)
 
 ## Downloads
 
 Distribution archives of released versions (containing binaries,
 sources, javadoc, and the documentation web site) are available from the
-[APS VDCT page](http://www.aps.anl.gov/epics/extensions/vdct/index.php).
+[APS VDCT page](https://epics.anl.gov/extensions/vdct/index.php).
 
 ## Building
 
@@ -36,7 +36,8 @@ Apart from the default lifecycle, two additional Maven goals are useful:
 
 CI is provided through Jenkins as part of the
 [EPICS Extensions CI](https://openepics.ci.cloudbees.com/view/EPICS%20Extensions/)
-on the [CloudBees](https://www.cloudbees.com/) _Jenkins in the cloud_ platform,
+on the [Jenkins in the Cloud](https://www.cloudbees.com/products/jenkins-cloud)
+platform powered by [CloudBees](https://www.cloudbees.com/),
 and on [Travis](https://travis-ci.org/epics-extensions/VisualDCT).
 
 ## Bugs
@@ -51,5 +52,5 @@ Pull requests are always welcome.
 
 For non-trivial changes and additions, please first contact the authors
 and/or use the EPICS
-[Tech-Talk](http://www.aps.anl.gov/epics/tech-talk/index.php) mail exploder
+[Tech-Talk](https://epics.anl.gov/tech-talk/index.php) mail exploder
 to discuss and review your plans.

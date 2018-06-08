@@ -55,7 +55,7 @@
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/Line.html">Line</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/VisibleObject.html">VisibleObject</a> <strong class="jxr_keyword">implements</strong> BorderObject, Flexible, Movable, Popupable, Selectable, <a href="../../../../../com/cosylab/vdct/graphics/objects/Clipboardable.html">Clipboardable</a>
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>  {
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>  
-<a class="jxr_linenumber" name="L50" href="#L50">50</a>  <strong class="jxr_keyword">class</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/Line.html">PopupMenuHandler</a> <strong class="jxr_keyword">implements</strong> ActionListener
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>  <strong class="jxr_keyword">class</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/Connector.html">PopupMenuHandler</a> <strong class="jxr_keyword">implements</strong> ActionListener
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>  {
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>  	
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> actionPerformed(ActionEvent event)
@@ -389,7 +389,7 @@
 <a class="jxr_linenumber" name="L381" href="#L381">381</a> {
 <a class="jxr_linenumber" name="L382" href="#L382">382</a> 	Vector items = <strong class="jxr_keyword">new</strong> Vector();
 <a class="jxr_linenumber" name="L383" href="#L383">383</a> 
-<a class="jxr_linenumber" name="L384" href="#L384">384</a> 	ActionListener al = <strong class="jxr_keyword">new</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/Line.html">PopupMenuHandler</a>();
+<a class="jxr_linenumber" name="L384" href="#L384">384</a> 	ActionListener al = <strong class="jxr_keyword">new</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/Connector.html">PopupMenuHandler</a>();
 <a class="jxr_linenumber" name="L385" href="#L385">385</a> 
 <a class="jxr_linenumber" name="L386" href="#L386">386</a> 	JMenuItem colorItem = <strong class="jxr_keyword">new</strong> JMenuItem(colorString);
 <a class="jxr_linenumber" name="L387" href="#L387">387</a> 	colorItem.addActionListener(al);
@@ -650,6 +650,6 @@
 <a class="jxr_linenumber" name="L642" href="#L642">642</a> }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2002&#x2013;2016 <a href="http://www.cosylab.com/">Cosylab</a>. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2002&#x2013;2018 <a href="http://www.cosylab.com/">Cosylab</a>. All rights reserved.</div>
 </body>
 </html>
