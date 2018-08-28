@@ -1,3 +1,10 @@
+visualdct (2.8.0-1) unstable; urgency=medium
+
+  * New upstream version 2.8.0
+  * remove debian version from install path
+
+ -- Christoph Schröder <christoph.schroeder@helmholtz-berlin.de>  Tue, 28 Aug 2018 12:59:33 +0200
+
 visualdct (2.7.0-1) unstable; urgency=medium
 
   * New upstream version 2.7.0
