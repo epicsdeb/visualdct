@@ -1,19 +1,18 @@
 #!/usr/bin/make -f
 
 export DH_VERBOSE=1
-export DEB_VERSION := $(shell dpkg-parsechangelog | egrep '^Version:' | cut -f 2 -d ' ')
-export DEB_NOEPOCH_VERSION := $(shell echo $(DEB_VERSION) | cut -d: -f2-)
-export DEB_UPSTREAM_VERSION := $(shell echo $(DEB_NOEPOCH_VERSION) | sed 's/-[^-]*$$//')
+#export DEB_VERSION := $(shell dpkg-parsechangelog | egrep '^Version:' | cut -f 2 -d ' ')
+#export DEB_NOEPOCH_VERSION := $(shell echo $(DEB_VERSION) | cut -d: -f2-)
+#export DEB_UPSTREAM_VERSION := $(shell echo $(DEB_NOEPOCH_VERSION) | sed 's/-[^-]*$$//')
 
 %:
 	dh $@
 
 override_dh_auto_install:
 	dh_install visualdct usr/bin/
-	dh_install VisualDCT-$(DEB_UPSTREAM_VERSION).jar usr/share/visualdct/
-	dh_install VisualDCT-$(DEB_UPSTREAM_VERSION)-javadoc.jar usr/share/doc/visualdct/
-	dh_install VisualDCT-$(DEB_UPSTREAM_VERSION)-sources.jar usr/share/doc/visualdct/
+	dh_install VisualDCT.jar usr/share/visualdct/
+	dh_install VisualDCT-javadoc.jar usr/share/doc/visualdct/
+	dh_install VisualDCT-sources.jar usr/share/doc/visualdct/
 	dh_link usr/bin/visualdct usr/bin/vdct
-	dh_link usr/share/visualdct/VisualDCT-$(DEB_UPSTREAM_VERSION).jar usr/share/visualdct/VisualDCT.jar
 	dh_auto_install
 
