@@ -6,26 +6,26 @@ VisualDCT is the Visual Database Configuration Tool for
 It was developed by [Cosylab](http://www.cosylab.com/).
 This development was funded by SLS, APS, Diamond and SNS. 
 
-## Web Site
-
-VisualDCT has a generated web site that contains a wealth of information,
-including user manuals, release notes, reference and project documentation.
-
-There are two versions available on-line:
-
- * [latest release](https://epics-extensions.github.io/VisualDCT/)
- * [development version](https://openepics.ci.cloudbees.com/job/ext-VisualDCT-master-site/site/)
-
 ## Downloads
 
 Distribution archives of released versions (containing binaries,
 sources, javadoc, and the documentation web site) are available from the
-[APS VDCT page](https://epics.anl.gov/extensions/vdct/index.php).
+[releases page](https://github.com/epics-extensions/VisualDCT/releases).
 
-## Building
+## Web Site
+
+VisualDCT has a generated static web site that contains detailed information,
+including user manuals, release notes, reference and project documentation.
+
+The current (development) version of the generated web site is 
+[available on-line](https://epics-extensions.github.io/VisualDCT/), the complete
+website is included in the distribution archives (in the `site` folder).
+
+## Building from Sources
 
 VisualDCT is a [Maven](https://maven.apache.org/) project.
 Any recent Java IDE should be able to open and compile it.
+VisualDCT is known to compile using Java 8 and Java 10.
 
 Apart from the default lifecycle, two additional Maven goals are useful:
 
@@ -34,11 +34,8 @@ Apart from the default lifecycle, two additional Maven goals are useful:
 
 ## Continuous Integration
 
-CI is provided through Jenkins as part of the
-[EPICS Extensions CI](https://openepics.ci.cloudbees.com/view/EPICS%20Extensions/)
-on the [Jenkins in the Cloud](https://www.cloudbees.com/products/jenkins-cloud)
-platform powered by [CloudBees](https://www.cloudbees.com/),
-and on [Travis](https://travis-ci.org/epics-extensions/VisualDCT).
+Continuous Integration and deployment is provided through 
+[Travis-CI](https://travis-ci.org/epics-extensions/VisualDCT).
 
 ## Bugs
 

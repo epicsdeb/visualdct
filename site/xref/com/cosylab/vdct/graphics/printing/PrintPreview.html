@@ -106,9 +106,9 @@
 <a class="jxr_linenumber" name="L98" href="#L98">98</a>  }
 <a class="jxr_linenumber" name="L99" href="#L99">99</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L100" href="#L100">100</a> <em class="jxr_javadoccomment"> * PrintPreviewFrame constructor comment.</em>
-<a class="jxr_linenumber" name="L101" href="#L101">101</a> <em class="jxr_javadoccomment"> * @param parent</em>
+<a class="jxr_linenumber" name="L101" href="#L101">101</a> <em class="jxr_javadoccomment"> * @param parent parent</em>
 <a class="jxr_linenumber" name="L102" href="#L102">102</a> <em class="jxr_javadoccomment"> * @param title java.lang.String</em>
-<a class="jxr_linenumber" name="L103" href="#L103">103</a> <em class="jxr_javadoccomment"> * @param target</em>
+<a class="jxr_linenumber" name="L103" href="#L103">103</a> <em class="jxr_javadoccomment"> * @param target target</em>
 <a class="jxr_linenumber" name="L104" href="#L104">104</a> <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L105" href="#L105">105</a> <strong class="jxr_keyword">public</strong> <a href="../../../../../com/cosylab/vdct/graphics/printing/PrintPreview.html">PrintPreview</a>(Frame parent, Pageable target, String title) {
 <a class="jxr_linenumber" name="L106" href="#L106">106</a> 	<strong class="jxr_keyword">super</strong>(parent);
@@ -677,7 +677,7 @@
 <a class="jxr_linenumber" name="L669" href="#L669">669</a> }
 <a class="jxr_linenumber" name="L670" href="#L670">670</a> <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L671" href="#L671">671</a> <em class="jxr_javadoccomment"> * Comment</em>
-<a class="jxr_linenumber" name="L672" href="#L672">672</a> <em class="jxr_javadoccomment"> * @param actionEvent</em>
+<a class="jxr_linenumber" name="L672" href="#L672">672</a> <em class="jxr_javadoccomment"> * @param actionEvent actionEvent</em>
 <a class="jxr_linenumber" name="L673" href="#L673">673</a> <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L674" href="#L674">674</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> jTextField1_ActionPerformed(java.awt.event.ActionEvent actionEvent) {
 <a class="jxr_linenumber" name="L675" href="#L675">675</a> 	<strong class="jxr_keyword">try</strong> {
@@ -820,7 +820,7 @@
 <a class="jxr_linenumber" name="L812" href="#L812">812</a> }
 <a class="jxr_linenumber" name="L813" href="#L813">813</a> <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L814" href="#L814">814</a> <em class="jxr_javadoccomment"> * Comment</em>
-<a class="jxr_linenumber" name="L815" href="#L815">815</a> <em class="jxr_javadoccomment"> * @param itemEvent</em>
+<a class="jxr_linenumber" name="L815" href="#L815">815</a> <em class="jxr_javadoccomment"> * @param itemEvent itemEvent</em>
 <a class="jxr_linenumber" name="L816" href="#L816">816</a> <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L817" href="#L817">817</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> modeComboBox_ItemStateChanged(java.awt.event.ItemEvent itemEvent) {
 <a class="jxr_linenumber" name="L818" href="#L818">818</a> 	<strong class="jxr_keyword">if</strong> (Page.getPrintMode()==getModeComboBox().getSelectedIndex())
@@ -847,85 +847,88 @@
 <a class="jxr_linenumber" name="L839" href="#L839">839</a> }
 <a class="jxr_linenumber" name="L840" href="#L840">840</a> <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L841" href="#L841">841</a> <em class="jxr_javadoccomment"> * Comment</em>
-<a class="jxr_linenumber" name="L842" href="#L842">842</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L843" href="#L843">843</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> printPreviewFrame_WindowClosed(java.awt.event.WindowEvent windowEvent) {
-<a class="jxr_linenumber" name="L844" href="#L844">844</a> 	loadingPreviews = false;
-<a class="jxr_linenumber" name="L845" href="#L845">845</a> }
-<a class="jxr_linenumber" name="L846" href="#L846">846</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L847" href="#L847">847</a> <em class="jxr_javadoccomment"> * Comment</em>
-<a class="jxr_linenumber" name="L848" href="#L848">848</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L849" href="#L849">849</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> printToolBarButton_ActionEvents() {
-<a class="jxr_linenumber" name="L850" href="#L850">850</a> 	<em class="jxr_comment">// !!!</em>
-<a class="jxr_linenumber" name="L851" href="#L851">851</a> 	com.cosylab.vdct.VisualDCT.getInstance().printMenuItem_ActionPerformed();
-<a class="jxr_linenumber" name="L852" href="#L852">852</a> }
-<a class="jxr_linenumber" name="L853" href="#L853">853</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L854" href="#L854">854</a> <em class="jxr_javadoccomment"> * Comment</em>
-<a class="jxr_linenumber" name="L855" href="#L855">855</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L856" href="#L856">856</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> printToolBarButton1_ActionPerformed(java.awt.event.ActionEvent actionEvent) {
-<a class="jxr_linenumber" name="L857" href="#L857">857</a> 	PageFormat pf = Page.getPageFormat();
-<a class="jxr_linenumber" name="L858" href="#L858">858</a> 	<em class="jxr_comment">//!!!</em>
-<a class="jxr_linenumber" name="L859" href="#L859">859</a> 	com.cosylab.vdct.VisualDCT.getInstance().pageSetupMenuItem_ActionPerformed(actionEvent);
-<a class="jxr_linenumber" name="L860" href="#L860">860</a> 
-<a class="jxr_linenumber" name="L861" href="#L861">861</a> 	<em class="jxr_comment">// update if necessary</em>
-<a class="jxr_linenumber" name="L862" href="#L862">862</a> 	<strong class="jxr_keyword">if</strong> (pf!=Page.getPageFormat())
-<a class="jxr_linenumber" name="L863" href="#L863">863</a> 		<strong class="jxr_keyword">new</strong> Thread() {
-<a class="jxr_linenumber" name="L864" href="#L864">864</a> 			<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> run() {
-<a class="jxr_linenumber" name="L865" href="#L865">865</a> 				loadPreview();
-<a class="jxr_linenumber" name="L866" href="#L866">866</a> 			}
-<a class="jxr_linenumber" name="L867" href="#L867">867</a> 		}.start();
-<a class="jxr_linenumber" name="L868" href="#L868">868</a> 
-<a class="jxr_linenumber" name="L869" href="#L869">869</a> }
-<a class="jxr_linenumber" name="L870" href="#L870">870</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L871" href="#L871">871</a> <em class="jxr_javadoccomment"> * Comment</em>
-<a class="jxr_linenumber" name="L872" href="#L872">872</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L873" href="#L873">873</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> scaleComboBox_ActionPerformed(java.awt.event.ActionEvent actionEvent) {
-<a class="jxr_linenumber" name="L874" href="#L874">874</a> 
-<a class="jxr_linenumber" name="L875" href="#L875">875</a> 	Thread runner = <strong class="jxr_keyword">new</strong> Thread() {
-<a class="jxr_linenumber" name="L876" href="#L876">876</a> 		<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> run() {
-<a class="jxr_linenumber" name="L877" href="#L877">877</a> 			String str = getScaleComboBox().getSelectedItem().toString();
-<a class="jxr_linenumber" name="L878" href="#L878">878</a> 			<strong class="jxr_keyword">if</strong> (str.endsWith(<span class="jxr_string">"%"</span>))
-<a class="jxr_linenumber" name="L879" href="#L879">879</a> 				str = str.substring(0, str.length() - 1);
-<a class="jxr_linenumber" name="L880" href="#L880">880</a> 			str = str.trim();
-<a class="jxr_linenumber" name="L881" href="#L881">881</a> 
-<a class="jxr_linenumber" name="L882" href="#L882">882</a> 			<strong class="jxr_keyword">int</strong> scale = 0;
-<a class="jxr_linenumber" name="L883" href="#L883">883</a> 			<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L884" href="#L884">884</a> 				scale = Integer.parseInt(str);
-<a class="jxr_linenumber" name="L885" href="#L885">885</a> 			} <strong class="jxr_keyword">catch</strong> (NumberFormatException ex) {
-<a class="jxr_linenumber" name="L886" href="#L886">886</a> 				<strong class="jxr_keyword">return</strong>;
-<a class="jxr_linenumber" name="L887" href="#L887">887</a> 			}
-<a class="jxr_linenumber" name="L888" href="#L888">888</a> 
-<a class="jxr_linenumber" name="L889" href="#L889">889</a> 			<strong class="jxr_keyword">double</strong> ratioFix = 1; <em class="jxr_comment">//getToolkit().getScreenResolution()/(double)72;	// so that 100% is real A4 on the screen</em>
-<a class="jxr_linenumber" name="L890" href="#L890">890</a> 			<strong class="jxr_keyword">int</strong> w = (<strong class="jxr_keyword">int</strong>) (ratioFix * pageWidth * scale / 100);
-<a class="jxr_linenumber" name="L891" href="#L891">891</a> 			<strong class="jxr_keyword">int</strong> h = (<strong class="jxr_keyword">int</strong>) (ratioFix * pageHeight * scale / 100);
-<a class="jxr_linenumber" name="L892" href="#L892">892</a> 
-<a class="jxr_linenumber" name="L893" href="#L893">893</a> 			<strong class="jxr_keyword">int</strong> pageIndex = 1;
-<a class="jxr_linenumber" name="L894" href="#L894">894</a> 			Component[] comps = getPreviewContainer().getComponents();
-<a class="jxr_linenumber" name="L895" href="#L895">895</a> 			<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> k = 0; k &lt; comps.length; k++) {
-<a class="jxr_linenumber" name="L896" href="#L896">896</a> 				<strong class="jxr_keyword">if</strong> (!(comps[k] instanceof PagePreview))
-<a class="jxr_linenumber" name="L897" href="#L897">897</a> 					<strong class="jxr_keyword">continue</strong>;
-<a class="jxr_linenumber" name="L898" href="#L898">898</a> 
-<a class="jxr_linenumber" name="L899" href="#L899">899</a> 				getStatusLabel().setText(<span class="jxr_string">"Rendering page "</span>+pageIndex+<span class="jxr_string">"..."</span>);
-<a class="jxr_linenumber" name="L900" href="#L900">900</a> 				Thread.yield();
-<a class="jxr_linenumber" name="L901" href="#L901">901</a> 					
-<a class="jxr_linenumber" name="L902" href="#L902">902</a> 				PagePreview pp = (PagePreview) comps[k];
-<a class="jxr_linenumber" name="L903" href="#L903">903</a> 				pp.setScaledSize(w, h);
-<a class="jxr_linenumber" name="L904" href="#L904">904</a> 				
-<a class="jxr_linenumber" name="L905" href="#L905">905</a> 				getStatusLabel().setText(<span class="jxr_string">"Rendering page "</span>+(pageIndex++)+<span class="jxr_string">"...Done."</span>);
-<a class="jxr_linenumber" name="L906" href="#L906">906</a> 				Thread.yield();
-<a class="jxr_linenumber" name="L907" href="#L907">907</a> 			}
-<a class="jxr_linenumber" name="L908" href="#L908">908</a> 
-<a class="jxr_linenumber" name="L909" href="#L909">909</a> 			getStatusLabel().setText(<span class="jxr_string">"Rendering done."</span>);
-<a class="jxr_linenumber" name="L910" href="#L910">910</a> 
-<a class="jxr_linenumber" name="L911" href="#L911">911</a> 			getPreviewContainer().doLayout();
-<a class="jxr_linenumber" name="L912" href="#L912">912</a> 			getPreviewContainer().getParent().getParent().validate();
+<a class="jxr_linenumber" name="L842" href="#L842">842</a> <em class="jxr_javadoccomment">     * @param windowEvent windowEvent</em>
+<a class="jxr_linenumber" name="L843" href="#L843">843</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L844" href="#L844">844</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> printPreviewFrame_WindowClosed(java.awt.event.WindowEvent windowEvent) {
+<a class="jxr_linenumber" name="L845" href="#L845">845</a> 	loadingPreviews = false;
+<a class="jxr_linenumber" name="L846" href="#L846">846</a> }
+<a class="jxr_linenumber" name="L847" href="#L847">847</a> <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L848" href="#L848">848</a> <em class="jxr_javadoccomment"> * Comment</em>
+<a class="jxr_linenumber" name="L849" href="#L849">849</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L850" href="#L850">850</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> printToolBarButton_ActionEvents() {
+<a class="jxr_linenumber" name="L851" href="#L851">851</a> 	<em class="jxr_comment">// !!!</em>
+<a class="jxr_linenumber" name="L852" href="#L852">852</a> 	com.cosylab.vdct.VisualDCT.getInstance().printMenuItem_ActionPerformed();
+<a class="jxr_linenumber" name="L853" href="#L853">853</a> }
+<a class="jxr_linenumber" name="L854" href="#L854">854</a> <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L855" href="#L855">855</a> <em class="jxr_javadoccomment"> * Comment</em>
+<a class="jxr_linenumber" name="L856" href="#L856">856</a> <em class="jxr_javadoccomment">     * @param actionEvent actionEvent</em>
+<a class="jxr_linenumber" name="L857" href="#L857">857</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L858" href="#L858">858</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> printToolBarButton1_ActionPerformed(java.awt.event.ActionEvent actionEvent) {
+<a class="jxr_linenumber" name="L859" href="#L859">859</a> 	PageFormat pf = Page.getPageFormat();
+<a class="jxr_linenumber" name="L860" href="#L860">860</a> 	<em class="jxr_comment">//!!!</em>
+<a class="jxr_linenumber" name="L861" href="#L861">861</a> 	com.cosylab.vdct.VisualDCT.getInstance().pageSetupMenuItem_ActionPerformed(actionEvent);
+<a class="jxr_linenumber" name="L862" href="#L862">862</a> 
+<a class="jxr_linenumber" name="L863" href="#L863">863</a> 	<em class="jxr_comment">// update if necessary</em>
+<a class="jxr_linenumber" name="L864" href="#L864">864</a> 	<strong class="jxr_keyword">if</strong> (pf!=Page.getPageFormat())
+<a class="jxr_linenumber" name="L865" href="#L865">865</a> 		<strong class="jxr_keyword">new</strong> Thread() {
+<a class="jxr_linenumber" name="L866" href="#L866">866</a> 			<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> run() {
+<a class="jxr_linenumber" name="L867" href="#L867">867</a> 				loadPreview();
+<a class="jxr_linenumber" name="L868" href="#L868">868</a> 			}
+<a class="jxr_linenumber" name="L869" href="#L869">869</a> 		}.start();
+<a class="jxr_linenumber" name="L870" href="#L870">870</a> 
+<a class="jxr_linenumber" name="L871" href="#L871">871</a> }
+<a class="jxr_linenumber" name="L872" href="#L872">872</a> <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L873" href="#L873">873</a> <em class="jxr_javadoccomment"> * Comment</em>
+<a class="jxr_linenumber" name="L874" href="#L874">874</a> <em class="jxr_javadoccomment">     * @param actionEvent actionEvent</em>
+<a class="jxr_linenumber" name="L875" href="#L875">875</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L876" href="#L876">876</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> scaleComboBox_ActionPerformed(java.awt.event.ActionEvent actionEvent) {
+<a class="jxr_linenumber" name="L877" href="#L877">877</a> 
+<a class="jxr_linenumber" name="L878" href="#L878">878</a> 	Thread runner = <strong class="jxr_keyword">new</strong> Thread() {
+<a class="jxr_linenumber" name="L879" href="#L879">879</a> 		<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> run() {
+<a class="jxr_linenumber" name="L880" href="#L880">880</a> 			String str = getScaleComboBox().getSelectedItem().toString();
+<a class="jxr_linenumber" name="L881" href="#L881">881</a> 			<strong class="jxr_keyword">if</strong> (str.endsWith(<span class="jxr_string">"%"</span>))
+<a class="jxr_linenumber" name="L882" href="#L882">882</a> 				str = str.substring(0, str.length() - 1);
+<a class="jxr_linenumber" name="L883" href="#L883">883</a> 			str = str.trim();
+<a class="jxr_linenumber" name="L884" href="#L884">884</a> 
+<a class="jxr_linenumber" name="L885" href="#L885">885</a> 			<strong class="jxr_keyword">int</strong> scale = 0;
+<a class="jxr_linenumber" name="L886" href="#L886">886</a> 			<strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L887" href="#L887">887</a> 				scale = Integer.parseInt(str);
+<a class="jxr_linenumber" name="L888" href="#L888">888</a> 			} <strong class="jxr_keyword">catch</strong> (NumberFormatException ex) {
+<a class="jxr_linenumber" name="L889" href="#L889">889</a> 				<strong class="jxr_keyword">return</strong>;
+<a class="jxr_linenumber" name="L890" href="#L890">890</a> 			}
+<a class="jxr_linenumber" name="L891" href="#L891">891</a> 
+<a class="jxr_linenumber" name="L892" href="#L892">892</a> 			<strong class="jxr_keyword">double</strong> ratioFix = 1; <em class="jxr_comment">//getToolkit().getScreenResolution()/(double)72;	// so that 100% is real A4 on the screen</em>
+<a class="jxr_linenumber" name="L893" href="#L893">893</a> 			<strong class="jxr_keyword">int</strong> w = (<strong class="jxr_keyword">int</strong>) (ratioFix * pageWidth * scale / 100);
+<a class="jxr_linenumber" name="L894" href="#L894">894</a> 			<strong class="jxr_keyword">int</strong> h = (<strong class="jxr_keyword">int</strong>) (ratioFix * pageHeight * scale / 100);
+<a class="jxr_linenumber" name="L895" href="#L895">895</a> 
+<a class="jxr_linenumber" name="L896" href="#L896">896</a> 			<strong class="jxr_keyword">int</strong> pageIndex = 1;
+<a class="jxr_linenumber" name="L897" href="#L897">897</a> 			Component[] comps = getPreviewContainer().getComponents();
+<a class="jxr_linenumber" name="L898" href="#L898">898</a> 			<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> k = 0; k &lt; comps.length; k++) {
+<a class="jxr_linenumber" name="L899" href="#L899">899</a> 				<strong class="jxr_keyword">if</strong> (!(comps[k] instanceof PagePreview))
+<a class="jxr_linenumber" name="L900" href="#L900">900</a> 					<strong class="jxr_keyword">continue</strong>;
+<a class="jxr_linenumber" name="L901" href="#L901">901</a> 
+<a class="jxr_linenumber" name="L902" href="#L902">902</a> 				getStatusLabel().setText(<span class="jxr_string">"Rendering page "</span>+pageIndex+<span class="jxr_string">"..."</span>);
+<a class="jxr_linenumber" name="L903" href="#L903">903</a> 				Thread.yield();
+<a class="jxr_linenumber" name="L904" href="#L904">904</a> 					
+<a class="jxr_linenumber" name="L905" href="#L905">905</a> 				PagePreview pp = (PagePreview) comps[k];
+<a class="jxr_linenumber" name="L906" href="#L906">906</a> 				pp.setScaledSize(w, h);
+<a class="jxr_linenumber" name="L907" href="#L907">907</a> 				
+<a class="jxr_linenumber" name="L908" href="#L908">908</a> 				getStatusLabel().setText(<span class="jxr_string">"Rendering page "</span>+(pageIndex++)+<span class="jxr_string">"...Done."</span>);
+<a class="jxr_linenumber" name="L909" href="#L909">909</a> 				Thread.yield();
+<a class="jxr_linenumber" name="L910" href="#L910">910</a> 			}
+<a class="jxr_linenumber" name="L911" href="#L911">911</a> 
+<a class="jxr_linenumber" name="L912" href="#L912">912</a> 			getStatusLabel().setText(<span class="jxr_string">"Rendering done."</span>);
 <a class="jxr_linenumber" name="L913" href="#L913">913</a> 
-<a class="jxr_linenumber" name="L914" href="#L914">914</a> 		}
-<a class="jxr_linenumber" name="L915" href="#L915">915</a> 	};
+<a class="jxr_linenumber" name="L914" href="#L914">914</a> 			getPreviewContainer().doLayout();
+<a class="jxr_linenumber" name="L915" href="#L915">915</a> 			getPreviewContainer().getParent().getParent().validate();
 <a class="jxr_linenumber" name="L916" href="#L916">916</a> 
-<a class="jxr_linenumber" name="L917" href="#L917">917</a> 	runner.start();
-<a class="jxr_linenumber" name="L918" href="#L918">918</a> 
-<a class="jxr_linenumber" name="L919" href="#L919">919</a> }
-<a class="jxr_linenumber" name="L920" href="#L920">920</a> }
+<a class="jxr_linenumber" name="L917" href="#L917">917</a> 		}
+<a class="jxr_linenumber" name="L918" href="#L918">918</a> 	};
+<a class="jxr_linenumber" name="L919" href="#L919">919</a> 
+<a class="jxr_linenumber" name="L920" href="#L920">920</a> 	runner.start();
+<a class="jxr_linenumber" name="L921" href="#L921">921</a> 
+<a class="jxr_linenumber" name="L922" href="#L922">922</a> }
+<a class="jxr_linenumber" name="L923" href="#L923">923</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2002&#x2013;2018 <a href="http://www.cosylab.com/">Cosylab</a>. All rights reserved.</div>

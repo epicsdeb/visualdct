@@ -1,1 +1,0 @@
-java -cp VisualDCT.jar -DEPICS_DB_INCLUDE_PATH=$EPICS_DB_INCLUDE_PATH com.cosylab.vdct.VisualDCT $*

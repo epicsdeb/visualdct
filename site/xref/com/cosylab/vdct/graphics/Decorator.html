@@ -52,7 +52,7 @@
 <a class="jxr_linenumber" name="L44" href="#L44">44</a>  <strong class="jxr_keyword">public</strong> <a href="../../../../com/cosylab/vdct/graphics/Decorator.html">Decorator</a>() {}
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L46" href="#L46">46</a>  <em class="jxr_javadoccomment"> * ComponentManager constructor comment.</em>
-<a class="jxr_linenumber" name="L47" href="#L47">47</a>  <em class="jxr_javadoccomment">     * @param component</em>
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  <em class="jxr_javadoccomment">     * @param component component</em>
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>  <strong class="jxr_keyword">public</strong> <a href="../../../../com/cosylab/vdct/graphics/Decorator.html">Decorator</a>(<a href="../../../../com/cosylab/vdct/graphics/VisualComponent.html">VisualComponent</a> component) {
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>  	<strong class="jxr_keyword">this</strong>.component=component;
@@ -60,7 +60,7 @@
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>  <em class="jxr_javadoccomment"> * Default implementation</em>
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>  <em class="jxr_javadoccomment"> * Creation date: (10.12.2000 11:25:20)</em>
-<a class="jxr_linenumber" name="L55" href="#L55">55</a>  <em class="jxr_javadoccomment">     * @param g</em>
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  <em class="jxr_javadoccomment">     * @param g g</em>
 <a class="jxr_linenumber" name="L56" href="#L56">56</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L57" href="#L57">57</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> draw(Graphics g) {
 <a class="jxr_linenumber" name="L58" href="#L58">58</a>  	component.draw(g);
@@ -76,7 +76,7 @@
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>  <em class="jxr_javadoccomment"> * Insert the method's description here.</em>
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>  <em class="jxr_javadoccomment"> * Creation date: (11.12.2000 16:23:31)</em>
-<a class="jxr_linenumber" name="L71" href="#L71">71</a>  <em class="jxr_javadoccomment">     * @return </em>
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>  <em class="jxr_javadoccomment">     * @return something</em>
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> getComponentHeight() {
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>  	<strong class="jxr_keyword">if</strong> (component==<strong class="jxr_keyword">null</strong>) <strong class="jxr_keyword">return</strong> 0;
@@ -94,10 +94,10 @@
 <a class="jxr_linenumber" name="L86" href="#L86">86</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L87" href="#L87">87</a>  <em class="jxr_javadoccomment"> * Default implementation</em>
 <a class="jxr_linenumber" name="L88" href="#L88">88</a>  <em class="jxr_javadoccomment"> * Creation date: (10.12.2000 11:26:54)</em>
-<a class="jxr_linenumber" name="L89" href="#L89">89</a>  <em class="jxr_javadoccomment"> * @param x0</em>
-<a class="jxr_linenumber" name="L90" href="#L90">90</a>  <em class="jxr_javadoccomment"> * @param y0</em>
-<a class="jxr_linenumber" name="L91" href="#L91">91</a>  <em class="jxr_javadoccomment"> * @param width</em>
-<a class="jxr_linenumber" name="L92" href="#L92">92</a>  <em class="jxr_javadoccomment"> * @param height</em>
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>  <em class="jxr_javadoccomment"> * @param x0 x0</em>
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>  <em class="jxr_javadoccomment"> * @param y0 y0</em>
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>  <em class="jxr_javadoccomment"> * @param width width</em>
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>  <em class="jxr_javadoccomment"> * @param height height</em>
 <a class="jxr_linenumber" name="L93" href="#L93">93</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L94" href="#L94">94</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> resize(<strong class="jxr_keyword">int</strong> x0, <strong class="jxr_keyword">int</strong> y0, <strong class="jxr_keyword">int</strong> width, <strong class="jxr_keyword">int</strong> height) {
 <a class="jxr_linenumber" name="L95" href="#L95">95</a>  	component.resize(x0, y0, width, height);

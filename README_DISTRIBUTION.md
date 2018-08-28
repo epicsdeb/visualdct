@@ -8,7 +8,7 @@ with identical content.
 **Binaries**, **sources** and **Javadoc** are provided as JARs.
 
 The binary jar is executable. However, VisualDCT can also be started by calling 
-`java` with the JAR on the command line - this is shown in `runScript`.
+`java` with the JAR on the command line - this is shown in `visualdct.sh`.
 
 ## Documentation
 

@@ -313,8 +313,8 @@
 <a class="jxr_linenumber" name="L305" href="#L305">305</a> <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L306" href="#L306">306</a> <em class="jxr_javadoccomment"> * Return properties to be inspected</em>
 <a class="jxr_linenumber" name="L307" href="#L307">307</a> <em class="jxr_javadoccomment"> * Creation date: (1.2.2001 22:22:37)</em>
-<a class="jxr_linenumber" name="L308" href="#L308">308</a> <em class="jxr_javadoccomment">     * @param mode</em>
-<a class="jxr_linenumber" name="L309" href="#L309">309</a> <em class="jxr_javadoccomment">     * @param spreadsheet</em>
+<a class="jxr_linenumber" name="L308" href="#L308">308</a> <em class="jxr_javadoccomment">     * @param mode mode</em>
+<a class="jxr_linenumber" name="L309" href="#L309">309</a> <em class="jxr_javadoccomment">     * @param spreadsheet spreadsheet</em>
 <a class="jxr_linenumber" name="L310" href="#L310">310</a> <em class="jxr_javadoccomment"> * @return com.cosylab.vdct.inspector.InspectableProperty[]</em>
 <a class="jxr_linenumber" name="L311" href="#L311">311</a> <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L312" href="#L312">312</a> <strong class="jxr_keyword">public</strong> com.cosylab.vdct.inspector.InspectableProperty[] getProperties(<strong class="jxr_keyword">int</strong> mode, <strong class="jxr_keyword">boolean</strong> spreadsheet) {
@@ -379,7 +379,7 @@
 <a class="jxr_linenumber" name="L371" href="#L371">371</a> 	<strong class="jxr_keyword">return</strong> ((VDBTemplateMacro)fieldData).getDescription();
 <a class="jxr_linenumber" name="L372" href="#L372">372</a> }
 <a class="jxr_linenumber" name="L373" href="#L373">373</a> 
-<a class="jxr_linenumber" name="L374" href="#L374">374</a> <strong class="jxr_keyword">class</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/Connector.html">PopupMenuHandler</a> <strong class="jxr_keyword">implements</strong> ActionListener {
+<a class="jxr_linenumber" name="L374" href="#L374">374</a> <strong class="jxr_keyword">class</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/TextBox.html">PopupMenuHandler</a> <strong class="jxr_keyword">implements</strong> ActionListener {
 <a class="jxr_linenumber" name="L375" href="#L375">375</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> actionPerformed(ActionEvent e) {
 <a class="jxr_linenumber" name="L376" href="#L376">376</a> 		String action = e.getActionCommand();
 <a class="jxr_linenumber" name="L377" href="#L377">377</a> 		<strong class="jxr_keyword">if</strong> (action.equals(colorString))
@@ -422,7 +422,7 @@
 <a class="jxr_linenumber" name="L414" href="#L414">414</a> <em class="jxr_javadoccomment"> * @return com.cosylab.vdct.graphics.objects.EPICSLinkOut.PopupMenuHandler</em>
 <a class="jxr_linenumber" name="L415" href="#L415">415</a> <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L416" href="#L416">416</a> <strong class="jxr_keyword">private</strong> TemplateEPICSMacro.PopupMenuHandler createPopupmenuHandler() {
-<a class="jxr_linenumber" name="L417" href="#L417">417</a> 	<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/Connector.html">PopupMenuHandler</a>();
+<a class="jxr_linenumber" name="L417" href="#L417">417</a> 	<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../com/cosylab/vdct/graphics/objects/TextBox.html">PopupMenuHandler</a>();
 <a class="jxr_linenumber" name="L418" href="#L418">418</a> }
 <a class="jxr_linenumber" name="L419" href="#L419">419</a> 
 <a class="jxr_linenumber" name="L420" href="#L420">420</a> 
@@ -527,7 +527,7 @@
 <a class="jxr_linenumber" name="L519" href="#L519">519</a> }
 <a class="jxr_linenumber" name="L520" href="#L520">520</a> 
 <a class="jxr_linenumber" name="L521" href="#L521">521</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L522" href="#L522">522</a> <em class="jxr_javadoccomment">     * @param visible</em>
+<a class="jxr_linenumber" name="L522" href="#L522">522</a> <em class="jxr_javadoccomment">     * @param visible visible</em>
 <a class="jxr_linenumber" name="L523" href="#L523">523</a> <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L524" href="#L524">524</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> visilibityChanged(<strong class="jxr_keyword">boolean</strong> visible)
 <a class="jxr_linenumber" name="L525" href="#L525">525</a> {
@@ -544,105 +544,107 @@
 <a class="jxr_linenumber" name="L536" href="#L536">536</a> }
 <a class="jxr_linenumber" name="L537" href="#L537">537</a> 
 <a class="jxr_linenumber" name="L538" href="#L538">538</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L539" href="#L539">539</a> <em class="jxr_javadoccomment"> * @see com.cosylab.vdct.graphics.objects.VisibleObject#isVisible() </em>
-<a class="jxr_linenumber" name="L540" href="#L540">540</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L541" href="#L541">541</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> isVisible() {
-<a class="jxr_linenumber" name="L542" href="#L542">542</a> 	 <strong class="jxr_keyword">return</strong> (fieldData.getVisibility() == InspectableProperty.ALWAYS_VISIBLE ||
-<a class="jxr_linenumber" name="L543" href="#L543">543</a> 			(fieldData.getVisibility() == InspectableProperty.NON_DEFAULT_VISIBLE &amp;&amp; !fieldData.hasDefaultValue()));
-<a class="jxr_linenumber" name="L544" href="#L544">544</a> }
-<a class="jxr_linenumber" name="L545" href="#L545">545</a> 
-<a class="jxr_linenumber" name="L546" href="#L546">546</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L547" href="#L547">547</a> <em class="jxr_javadoccomment"> * @see com.cosylab.vdct.graphics.objects.Rotatable#setRight(boolean)</em>
-<a class="jxr_linenumber" name="L548" href="#L548">548</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L549" href="#L549">549</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setRight(<strong class="jxr_keyword">boolean</strong> isRight)
-<a class="jxr_linenumber" name="L550" href="#L550">550</a> {
-<a class="jxr_linenumber" name="L551" href="#L551">551</a> 	<strong class="jxr_keyword">boolean</strong> oldValue = isRight();
-<a class="jxr_linenumber" name="L552" href="#L552">552</a> 	<strong class="jxr_keyword">if</strong> (oldValue != isRight)
-<a class="jxr_linenumber" name="L553" href="#L553">553</a> 	{
-<a class="jxr_linenumber" name="L554" href="#L554">554</a> 		<strong class="jxr_keyword">super</strong>.setRight(isRight);
-<a class="jxr_linenumber" name="L555" href="#L555">555</a> 		((Template)getParent()).fieldSideChange(<strong class="jxr_keyword">this</strong>, isRight);
-<a class="jxr_linenumber" name="L556" href="#L556">556</a> 	}
-<a class="jxr_linenumber" name="L557" href="#L557">557</a> }
-<a class="jxr_linenumber" name="L558" href="#L558">558</a> 
-<a class="jxr_linenumber" name="L559" href="#L559">559</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L560" href="#L560">560</a> <em class="jxr_javadoccomment">	 * @see com.cosylab.vdct.graphics.objects.Movable#checkMove(int, int)</em>
-<a class="jxr_linenumber" name="L561" href="#L561">561</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L562" href="#L562">562</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> checkMove(<strong class="jxr_keyword">int</strong> dx, <strong class="jxr_keyword">int</strong> dy) {
-<a class="jxr_linenumber" name="L563" href="#L563">563</a> 		<em class="jxr_comment">// this method is called only on selection move</em>
-<a class="jxr_linenumber" name="L564" href="#L564">564</a> 		<em class="jxr_comment">// and this object is not selectable</em>
-<a class="jxr_linenumber" name="L565" href="#L565">565</a> 		<strong class="jxr_keyword">return</strong> false; 
-<a class="jxr_linenumber" name="L566" href="#L566">566</a> 	}
-<a class="jxr_linenumber" name="L567" href="#L567">567</a> 
-<a class="jxr_linenumber" name="L568" href="#L568">568</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L569" href="#L569">569</a> <em class="jxr_javadoccomment">	 * @see com.cosylab.vdct.graphics.objects.Movable#move(int, int)</em>
-<a class="jxr_linenumber" name="L570" href="#L570">570</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L571" href="#L571">571</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> move(<strong class="jxr_keyword">int</strong> dx, <strong class="jxr_keyword">int</strong> dy) {
-<a class="jxr_linenumber" name="L572" href="#L572">572</a> 
-<a class="jxr_linenumber" name="L573" href="#L573">573</a> 		<strong class="jxr_keyword">boolean</strong> moved = false;
+<a class="jxr_linenumber" name="L539" href="#L539">539</a> <em class="jxr_javadoccomment">     * @return something</em>
+<a class="jxr_linenumber" name="L540" href="#L540">540</a> <em class="jxr_javadoccomment"> * @see com.cosylab.vdct.graphics.objects.VisibleObject#isVisible() </em>
+<a class="jxr_linenumber" name="L541" href="#L541">541</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L542" href="#L542">542</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> isVisible() {
+<a class="jxr_linenumber" name="L543" href="#L543">543</a> 	 <strong class="jxr_keyword">return</strong> (fieldData.getVisibility() == InspectableProperty.ALWAYS_VISIBLE ||
+<a class="jxr_linenumber" name="L544" href="#L544">544</a> 			(fieldData.getVisibility() == InspectableProperty.NON_DEFAULT_VISIBLE &amp;&amp; !fieldData.hasDefaultValue()));
+<a class="jxr_linenumber" name="L545" href="#L545">545</a> }
+<a class="jxr_linenumber" name="L546" href="#L546">546</a> 
+<a class="jxr_linenumber" name="L547" href="#L547">547</a> <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L548" href="#L548">548</a> <em class="jxr_javadoccomment">     * @param isRight isRight</em>
+<a class="jxr_linenumber" name="L549" href="#L549">549</a> <em class="jxr_javadoccomment"> * @see com.cosylab.vdct.graphics.objects.Rotatable#setRight(boolean)</em>
+<a class="jxr_linenumber" name="L550" href="#L550">550</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L551" href="#L551">551</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setRight(<strong class="jxr_keyword">boolean</strong> isRight)
+<a class="jxr_linenumber" name="L552" href="#L552">552</a> {
+<a class="jxr_linenumber" name="L553" href="#L553">553</a> 	<strong class="jxr_keyword">boolean</strong> oldValue = isRight();
+<a class="jxr_linenumber" name="L554" href="#L554">554</a> 	<strong class="jxr_keyword">if</strong> (oldValue != isRight)
+<a class="jxr_linenumber" name="L555" href="#L555">555</a> 	{
+<a class="jxr_linenumber" name="L556" href="#L556">556</a> 		<strong class="jxr_keyword">super</strong>.setRight(isRight);
+<a class="jxr_linenumber" name="L557" href="#L557">557</a> 		((Template)getParent()).fieldSideChange(<strong class="jxr_keyword">this</strong>, isRight);
+<a class="jxr_linenumber" name="L558" href="#L558">558</a> 	}
+<a class="jxr_linenumber" name="L559" href="#L559">559</a> }
+<a class="jxr_linenumber" name="L560" href="#L560">560</a> 
+<a class="jxr_linenumber" name="L561" href="#L561">561</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L562" href="#L562">562</a> <em class="jxr_javadoccomment">	 * @see com.cosylab.vdct.graphics.objects.Movable#checkMove(int, int)</em>
+<a class="jxr_linenumber" name="L563" href="#L563">563</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L564" href="#L564">564</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> checkMove(<strong class="jxr_keyword">int</strong> dx, <strong class="jxr_keyword">int</strong> dy) {
+<a class="jxr_linenumber" name="L565" href="#L565">565</a> 		<em class="jxr_comment">// this method is called only on selection move</em>
+<a class="jxr_linenumber" name="L566" href="#L566">566</a> 		<em class="jxr_comment">// and this object is not selectable</em>
+<a class="jxr_linenumber" name="L567" href="#L567">567</a> 		<strong class="jxr_keyword">return</strong> false; 
+<a class="jxr_linenumber" name="L568" href="#L568">568</a> 	}
+<a class="jxr_linenumber" name="L569" href="#L569">569</a> 
+<a class="jxr_linenumber" name="L570" href="#L570">570</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L571" href="#L571">571</a> <em class="jxr_javadoccomment">	 * @see com.cosylab.vdct.graphics.objects.Movable#move(int, int)</em>
+<a class="jxr_linenumber" name="L572" href="#L572">572</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L573" href="#L573">573</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> move(<strong class="jxr_keyword">int</strong> dx, <strong class="jxr_keyword">int</strong> dy) {
 <a class="jxr_linenumber" name="L574" href="#L574">574</a> 
-<a class="jxr_linenumber" name="L575" href="#L575">575</a> 		Object id = getDsId();
-<a class="jxr_linenumber" name="L576" href="#L576">576</a> 		ViewState view = ViewState.getInstance(id);
-<a class="jxr_linenumber" name="L577" href="#L577">577</a> 		dx = (<strong class="jxr_keyword">int</strong>)(dx*view.getScale());
-<a class="jxr_linenumber" name="L578" href="#L578">578</a> 		dy = (<strong class="jxr_keyword">int</strong>)(dy*view.getScale());
-<a class="jxr_linenumber" name="L579" href="#L579">579</a> 		DrawingSurface drawingSurface = DsManager.getDrawingSurface(id);
-<a class="jxr_linenumber" name="L580" href="#L580">580</a> 		<strong class="jxr_keyword">int</strong> x = drawingSurface.getPressedX() + view.getRx();
-<a class="jxr_linenumber" name="L581" href="#L581">581</a> 		<strong class="jxr_keyword">int</strong> y = drawingSurface.getPressedY() + view.getRy();
-<a class="jxr_linenumber" name="L582" href="#L582">582</a> 
-<a class="jxr_linenumber" name="L583" href="#L583">583</a> 		<strong class="jxr_keyword">if</strong> (dx &gt; 0 &amp;&amp; !isRight())
-<a class="jxr_linenumber" name="L584" href="#L584">584</a> 		{
-<a class="jxr_linenumber" name="L585" href="#L585">585</a> 			<strong class="jxr_keyword">if</strong> ((x+dx) &gt; (getRx()+getRwidth()))
-<a class="jxr_linenumber" name="L586" href="#L586">586</a> 			{
-<a class="jxr_linenumber" name="L587" href="#L587">587</a> 				rotate();
-<a class="jxr_linenumber" name="L588" href="#L588">588</a> 				moved = <strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="L589" href="#L589">589</a> 			}
-<a class="jxr_linenumber" name="L590" href="#L590">590</a> 		}
-<a class="jxr_linenumber" name="L591" href="#L591">591</a> 		<strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (dx &lt; 0 &amp;&amp; isRight())
-<a class="jxr_linenumber" name="L592" href="#L592">592</a> 		{
-<a class="jxr_linenumber" name="L593" href="#L593">593</a> 			<strong class="jxr_keyword">if</strong> ((x+dx) &lt; getRx())
-<a class="jxr_linenumber" name="L594" href="#L594">594</a> 			{
-<a class="jxr_linenumber" name="L595" href="#L595">595</a> 				rotate();
-<a class="jxr_linenumber" name="L596" href="#L596">596</a> 				moved = <strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="L597" href="#L597">597</a> 			}
-<a class="jxr_linenumber" name="L598" href="#L598">598</a> 		}
-<a class="jxr_linenumber" name="L599" href="#L599">599</a> 
-<a class="jxr_linenumber" name="L600" href="#L600">600</a> 		LinkManagerObject lmo = (LinkManagerObject)getParent(); 
-<a class="jxr_linenumber" name="L601" href="#L601">601</a> 		<strong class="jxr_keyword">if</strong> (dy &gt; 0 &amp;&amp; !lmo.isLastField(<strong class="jxr_keyword">this</strong>))
-<a class="jxr_linenumber" name="L602" href="#L602">602</a> 		{
-<a class="jxr_linenumber" name="L603" href="#L603">603</a> 			<strong class="jxr_keyword">if</strong> ((y+dy) &gt; (getRy()+getRheight()))
-<a class="jxr_linenumber" name="L604" href="#L604">604</a> 			{
-<a class="jxr_linenumber" name="L605" href="#L605">605</a> 				lmo.moveFieldDown(<strong class="jxr_keyword">this</strong>);
-<a class="jxr_linenumber" name="L606" href="#L606">606</a> 				moved = <strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="L607" href="#L607">607</a> 			}
-<a class="jxr_linenumber" name="L608" href="#L608">608</a> 		}
-<a class="jxr_linenumber" name="L609" href="#L609">609</a> 		<strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (dy &lt; 0 &amp;&amp; !lmo.isFirstField(<strong class="jxr_keyword">this</strong>))
-<a class="jxr_linenumber" name="L610" href="#L610">610</a> 		{
-<a class="jxr_linenumber" name="L611" href="#L611">611</a> 			<strong class="jxr_keyword">if</strong> ((y+dy) &lt; getRy())
-<a class="jxr_linenumber" name="L612" href="#L612">612</a> 			{
-<a class="jxr_linenumber" name="L613" href="#L613">613</a> 				lmo.moveFieldUp(<strong class="jxr_keyword">this</strong>);
-<a class="jxr_linenumber" name="L614" href="#L614">614</a> 				moved = <strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="L615" href="#L615">615</a> 			}
-<a class="jxr_linenumber" name="L616" href="#L616">616</a> 		}
-<a class="jxr_linenumber" name="L617" href="#L617">617</a> 
-<a class="jxr_linenumber" name="L618" href="#L618">618</a> 		<em class="jxr_comment">// should be done for discrete move</em>
-<a class="jxr_linenumber" name="L619" href="#L619">619</a> 		<strong class="jxr_keyword">if</strong> (moved)
-<a class="jxr_linenumber" name="L620" href="#L620">620</a> 			drawingSurface.resetDraggedPosition();
-<a class="jxr_linenumber" name="L621" href="#L621">621</a> 
-<a class="jxr_linenumber" name="L622" href="#L622">622</a> 		<strong class="jxr_keyword">return</strong> moved;
-<a class="jxr_linenumber" name="L623" href="#L623">623</a> 		
-<a class="jxr_linenumber" name="L624" href="#L624">624</a> 	}
-<a class="jxr_linenumber" name="L625" href="#L625">625</a> 
-<a class="jxr_linenumber" name="L626" href="#L626">626</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L627" href="#L627">627</a> <em class="jxr_javadoccomment">	 * ...</em>
-<a class="jxr_linenumber" name="L628" href="#L628">628</a> <em class="jxr_javadoccomment">	 * Creation date: (29.1.2001 20:05:51)</em>
-<a class="jxr_linenumber" name="L629" href="#L629">629</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L630" href="#L630">630</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> disconnect(<a href="../../../../../com/cosylab/vdct/graphics/objects/Linkable.html">Linkable</a> disconnector) {
-<a class="jxr_linenumber" name="L631" href="#L631">631</a> 		<strong class="jxr_keyword">if</strong> (!disconnected &amp;&amp; (inlink==disconnector) ) {
-<a class="jxr_linenumber" name="L632" href="#L632">632</a> 			disconnected = <strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="L633" href="#L633">633</a> 			fieldData.setValue(nullString);
-<a class="jxr_linenumber" name="L634" href="#L634">634</a> 		}
-<a class="jxr_linenumber" name="L635" href="#L635">635</a> 	}
-<a class="jxr_linenumber" name="L636" href="#L636">636</a> 		
-<a class="jxr_linenumber" name="L637" href="#L637">637</a> }
+<a class="jxr_linenumber" name="L575" href="#L575">575</a> 		<strong class="jxr_keyword">boolean</strong> moved = false;
+<a class="jxr_linenumber" name="L576" href="#L576">576</a> 
+<a class="jxr_linenumber" name="L577" href="#L577">577</a> 		Object id = getDsId();
+<a class="jxr_linenumber" name="L578" href="#L578">578</a> 		ViewState view = ViewState.getInstance(id);
+<a class="jxr_linenumber" name="L579" href="#L579">579</a> 		dx = (<strong class="jxr_keyword">int</strong>)(dx*view.getScale());
+<a class="jxr_linenumber" name="L580" href="#L580">580</a> 		dy = (<strong class="jxr_keyword">int</strong>)(dy*view.getScale());
+<a class="jxr_linenumber" name="L581" href="#L581">581</a> 		DrawingSurface drawingSurface = DsManager.getDrawingSurface(id);
+<a class="jxr_linenumber" name="L582" href="#L582">582</a> 		<strong class="jxr_keyword">int</strong> x = drawingSurface.getPressedX() + view.getRx();
+<a class="jxr_linenumber" name="L583" href="#L583">583</a> 		<strong class="jxr_keyword">int</strong> y = drawingSurface.getPressedY() + view.getRy();
+<a class="jxr_linenumber" name="L584" href="#L584">584</a> 
+<a class="jxr_linenumber" name="L585" href="#L585">585</a> 		<strong class="jxr_keyword">if</strong> (dx &gt; 0 &amp;&amp; !isRight())
+<a class="jxr_linenumber" name="L586" href="#L586">586</a> 		{
+<a class="jxr_linenumber" name="L587" href="#L587">587</a> 			<strong class="jxr_keyword">if</strong> ((x+dx) &gt; (getRx()+getRwidth()))
+<a class="jxr_linenumber" name="L588" href="#L588">588</a> 			{
+<a class="jxr_linenumber" name="L589" href="#L589">589</a> 				rotate();
+<a class="jxr_linenumber" name="L590" href="#L590">590</a> 				moved = <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="L591" href="#L591">591</a> 			}
+<a class="jxr_linenumber" name="L592" href="#L592">592</a> 		}
+<a class="jxr_linenumber" name="L593" href="#L593">593</a> 		<strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (dx &lt; 0 &amp;&amp; isRight())
+<a class="jxr_linenumber" name="L594" href="#L594">594</a> 		{
+<a class="jxr_linenumber" name="L595" href="#L595">595</a> 			<strong class="jxr_keyword">if</strong> ((x+dx) &lt; getRx())
+<a class="jxr_linenumber" name="L596" href="#L596">596</a> 			{
+<a class="jxr_linenumber" name="L597" href="#L597">597</a> 				rotate();
+<a class="jxr_linenumber" name="L598" href="#L598">598</a> 				moved = <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="L599" href="#L599">599</a> 			}
+<a class="jxr_linenumber" name="L600" href="#L600">600</a> 		}
+<a class="jxr_linenumber" name="L601" href="#L601">601</a> 
+<a class="jxr_linenumber" name="L602" href="#L602">602</a> 		LinkManagerObject lmo = (LinkManagerObject)getParent(); 
+<a class="jxr_linenumber" name="L603" href="#L603">603</a> 		<strong class="jxr_keyword">if</strong> (dy &gt; 0 &amp;&amp; !lmo.isLastField(<strong class="jxr_keyword">this</strong>))
+<a class="jxr_linenumber" name="L604" href="#L604">604</a> 		{
+<a class="jxr_linenumber" name="L605" href="#L605">605</a> 			<strong class="jxr_keyword">if</strong> ((y+dy) &gt; (getRy()+getRheight()))
+<a class="jxr_linenumber" name="L606" href="#L606">606</a> 			{
+<a class="jxr_linenumber" name="L607" href="#L607">607</a> 				lmo.moveFieldDown(<strong class="jxr_keyword">this</strong>);
+<a class="jxr_linenumber" name="L608" href="#L608">608</a> 				moved = <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="L609" href="#L609">609</a> 			}
+<a class="jxr_linenumber" name="L610" href="#L610">610</a> 		}
+<a class="jxr_linenumber" name="L611" href="#L611">611</a> 		<strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (dy &lt; 0 &amp;&amp; !lmo.isFirstField(<strong class="jxr_keyword">this</strong>))
+<a class="jxr_linenumber" name="L612" href="#L612">612</a> 		{
+<a class="jxr_linenumber" name="L613" href="#L613">613</a> 			<strong class="jxr_keyword">if</strong> ((y+dy) &lt; getRy())
+<a class="jxr_linenumber" name="L614" href="#L614">614</a> 			{
+<a class="jxr_linenumber" name="L615" href="#L615">615</a> 				lmo.moveFieldUp(<strong class="jxr_keyword">this</strong>);
+<a class="jxr_linenumber" name="L616" href="#L616">616</a> 				moved = <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="L617" href="#L617">617</a> 			}
+<a class="jxr_linenumber" name="L618" href="#L618">618</a> 		}
+<a class="jxr_linenumber" name="L619" href="#L619">619</a> 
+<a class="jxr_linenumber" name="L620" href="#L620">620</a> 		<em class="jxr_comment">// should be done for discrete move</em>
+<a class="jxr_linenumber" name="L621" href="#L621">621</a> 		<strong class="jxr_keyword">if</strong> (moved)
+<a class="jxr_linenumber" name="L622" href="#L622">622</a> 			drawingSurface.resetDraggedPosition();
+<a class="jxr_linenumber" name="L623" href="#L623">623</a> 
+<a class="jxr_linenumber" name="L624" href="#L624">624</a> 		<strong class="jxr_keyword">return</strong> moved;
+<a class="jxr_linenumber" name="L625" href="#L625">625</a> 		
+<a class="jxr_linenumber" name="L626" href="#L626">626</a> 	}
+<a class="jxr_linenumber" name="L627" href="#L627">627</a> 
+<a class="jxr_linenumber" name="L628" href="#L628">628</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L629" href="#L629">629</a> <em class="jxr_javadoccomment">	 * ...</em>
+<a class="jxr_linenumber" name="L630" href="#L630">630</a> <em class="jxr_javadoccomment">	 * Creation date: (29.1.2001 20:05:51)</em>
+<a class="jxr_linenumber" name="L631" href="#L631">631</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L632" href="#L632">632</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> disconnect(<a href="../../../../../com/cosylab/vdct/graphics/objects/Linkable.html">Linkable</a> disconnector) {
+<a class="jxr_linenumber" name="L633" href="#L633">633</a> 		<strong class="jxr_keyword">if</strong> (!disconnected &amp;&amp; (inlink==disconnector) ) {
+<a class="jxr_linenumber" name="L634" href="#L634">634</a> 			disconnected = <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="L635" href="#L635">635</a> 			fieldData.setValue(nullString);
+<a class="jxr_linenumber" name="L636" href="#L636">636</a> 		}
+<a class="jxr_linenumber" name="L637" href="#L637">637</a> 	}
+<a class="jxr_linenumber" name="L638" href="#L638">638</a> 		
+<a class="jxr_linenumber" name="L639" href="#L639">639</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2002&#x2013;2018 <a href="http://www.cosylab.com/">Cosylab</a>. All rights reserved.</div>

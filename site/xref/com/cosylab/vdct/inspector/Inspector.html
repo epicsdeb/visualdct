@@ -99,7 +99,7 @@
 <a class="jxr_linenumber" name="L91" href="#L91">91</a>  	<em class="jxr_comment">// inspector components</em>
 <a class="jxr_linenumber" name="L92" href="#L92">92</a>  	<strong class="jxr_keyword">private</strong> <a href="../../../../com/cosylab/vdct/inspector/InspectorTableModel.html">InspectorTableModel</a> tableModel;
 <a class="jxr_linenumber" name="L93" href="#L93">93</a>  	<strong class="jxr_keyword">private</strong> <a href="../../../../com/cosylab/vdct/inspector/Inspectable.html">Inspectable</a> inspectedObject = <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="L94" href="#L94">94</a>  	IvjEventHandler ivjEventHandler = <strong class="jxr_keyword">new</strong> <a href="../../../../com/cosylab/vdct/DBDDialog.html">IvjEventHandler</a>();
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>  	IvjEventHandler ivjEventHandler = <strong class="jxr_keyword">new</strong> <a href="../../../../com/cosylab/vdct/VisualDCTSplashScreen.html">IvjEventHandler</a>();
 <a class="jxr_linenumber" name="L95" href="#L95">95</a>  	<strong class="jxr_keyword">private</strong> Vector objs;
 <a class="jxr_linenumber" name="L96" href="#L96">96</a>  	<strong class="jxr_keyword">private</strong> <a href="../../../../com/cosylab/vdct/inspector/Inspectable.html">Inspectable</a> toRemove = <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L97" href="#L97">97</a>  	<strong class="jxr_keyword">private</strong> JTabbedPane ivjViewTabbedPane = <strong class="jxr_keyword">null</strong>;
@@ -110,7 +110,7 @@
 <a class="jxr_linenumber" name="L102" href="#L102">102</a> 
 <a class="jxr_linenumber" name="L103" href="#L103">103</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> mode = 0;
 <a class="jxr_linenumber" name="L104" href="#L104">104</a> 
-<a class="jxr_linenumber" name="L105" href="#L105">105</a> <strong class="jxr_keyword">class</strong> <a href="../../../../com/cosylab/vdct/DBDDialog.html">IvjEventHandler</a> <strong class="jxr_keyword">implements</strong> java.awt.event.ItemListener {
+<a class="jxr_linenumber" name="L105" href="#L105">105</a> <strong class="jxr_keyword">class</strong> <a href="../../../../com/cosylab/vdct/VisualDCTSplashScreen.html">IvjEventHandler</a> <strong class="jxr_keyword">implements</strong> java.awt.event.ItemListener {
 <a class="jxr_linenumber" name="L106" href="#L106">106</a> 		<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> itemStateChanged(java.awt.event.ItemEvent e) {
 <a class="jxr_linenumber" name="L107" href="#L107">107</a> 			<strong class="jxr_keyword">if</strong> (e.getSource() == Inspector.<strong class="jxr_keyword">this</strong>.getObjectComboBox()) 
 <a class="jxr_linenumber" name="L108" href="#L108">108</a> 				connEtoC1(e);
@@ -126,7 +126,7 @@
 <a class="jxr_linenumber" name="L118" href="#L118">118</a> <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L119" href="#L119">119</a> <em class="jxr_javadoccomment"> * Inspector constructor comment.</em>
 <a class="jxr_linenumber" name="L120" href="#L120">120</a> <em class="jxr_javadoccomment"> * @param owner java.awt.Frame</em>
-<a class="jxr_linenumber" name="L121" href="#L121">121</a> <em class="jxr_javadoccomment"> * @param dsId</em>
+<a class="jxr_linenumber" name="L121" href="#L121">121</a> <em class="jxr_javadoccomment"> * @param dsId dsId</em>
 <a class="jxr_linenumber" name="L122" href="#L122">122</a> <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L123" href="#L123">123</a> <strong class="jxr_keyword">public</strong> <a href="../../../../com/cosylab/vdct/inspector/Inspector.html">Inspector</a>(Frame owner, Object dsId) {
 <a class="jxr_linenumber" name="L124" href="#L124">124</a> 	<strong class="jxr_keyword">super</strong>(owner);
@@ -691,7 +691,7 @@
 <a class="jxr_linenumber" name="L683" href="#L683">683</a> <em class="jxr_javadoccomment"> * Insert the method's description here.</em>
 <a class="jxr_linenumber" name="L684" href="#L684">684</a> <em class="jxr_javadoccomment"> * Creation date: (8.1.2001 17:50:20)</em>
 <a class="jxr_linenumber" name="L685" href="#L685">685</a> <em class="jxr_javadoccomment"> * @param object com.cosylab.vdct.inspector.Inspectable</em>
-<a class="jxr_linenumber" name="L686" href="#L686">686</a> <em class="jxr_javadoccomment"> * @param raise</em>
+<a class="jxr_linenumber" name="L686" href="#L686">686</a> <em class="jxr_javadoccomment"> * @param raise raise</em>
 <a class="jxr_linenumber" name="L687" href="#L687">687</a> <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L688" href="#L688">688</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> inspectObject(<a href="../../../../com/cosylab/vdct/inspector/Inspectable.html">Inspectable</a> object, <strong class="jxr_keyword">boolean</strong> raise) {
 <a class="jxr_linenumber" name="L689" href="#L689">689</a> 
@@ -805,194 +805,209 @@
 <a class="jxr_linenumber" name="L797" href="#L797">797</a> 	getHelpLabel().setText(help != <strong class="jxr_keyword">null</strong> ? help : <span class="jxr_string">""</span>);
 <a class="jxr_linenumber" name="L798" href="#L798">798</a> }
 <a class="jxr_linenumber" name="L799" href="#L799">799</a> 
-<a class="jxr_linenumber" name="L800" href="#L800">800</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setHelpColor(Color color) {
-<a class="jxr_linenumber" name="L801" href="#L801">801</a> 	getHelpLabel().setForeground(color);
-<a class="jxr_linenumber" name="L802" href="#L802">802</a> }
-<a class="jxr_linenumber" name="L803" href="#L803">803</a> 
-<a class="jxr_linenumber" name="L804" href="#L804">804</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L805" href="#L805">805</a> <em class="jxr_javadoccomment"> * Insert the method's description here.</em>
-<a class="jxr_linenumber" name="L806" href="#L806">806</a> <em class="jxr_javadoccomment"> * Creation date: (26.1.2001 16:24:25)</em>
-<a class="jxr_linenumber" name="L807" href="#L807">807</a> <em class="jxr_javadoccomment"> * @param state boolean</em>
-<a class="jxr_linenumber" name="L808" href="#L808">808</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L809" href="#L809">809</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setVisible(<strong class="jxr_keyword">boolean</strong> state) {
-<a class="jxr_linenumber" name="L810" href="#L810">810</a> 	<strong class="jxr_keyword">super</strong>.setVisible(state);
-<a class="jxr_linenumber" name="L811" href="#L811">811</a> 	<strong class="jxr_keyword">if</strong> (state) {
-<a class="jxr_linenumber" name="L812" href="#L812">812</a> 		toFront();
-<a class="jxr_linenumber" name="L813" href="#L813">813</a> 		requestFocus();
-<a class="jxr_linenumber" name="L814" href="#L814">814</a> 	}
-<a class="jxr_linenumber" name="L815" href="#L815">815</a> }
-<a class="jxr_linenumber" name="L816" href="#L816">816</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L817" href="#L817">817</a> <em class="jxr_javadoccomment"> * Insert the method's description here.</em>
-<a class="jxr_linenumber" name="L818" href="#L818">818</a> <em class="jxr_javadoccomment"> * Creation date: (5.5.2001 15:13:41)</em>
-<a class="jxr_linenumber" name="L819" href="#L819">819</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L820" href="#L820">820</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> updateComment() {
-<a class="jxr_linenumber" name="L821" href="#L821">821</a> 	<strong class="jxr_keyword">if</strong> (inspectedObject!=<strong class="jxr_keyword">null</strong>)
-<a class="jxr_linenumber" name="L822" href="#L822">822</a> 		getCommentTextArea().setText(inspectedObject.getCommentProperty().getValue());
-<a class="jxr_linenumber" name="L823" href="#L823">823</a> }
-<a class="jxr_linenumber" name="L824" href="#L824">824</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L825" href="#L825">825</a> <em class="jxr_javadoccomment"> * Insert the method's description here.</em>
-<a class="jxr_linenumber" name="L826" href="#L826">826</a> <em class="jxr_javadoccomment"> * Creation date: (8.1.2001 17:50:20)</em>
-<a class="jxr_linenumber" name="L827" href="#L827">827</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L828" href="#L828">828</a> <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">boolean</strong> updatingList = false;
-<a class="jxr_linenumber" name="L829" href="#L829">829</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> updateObjectList() {
-<a class="jxr_linenumber" name="L830" href="#L830">830</a> 	<strong class="jxr_keyword">try</strong>
-<a class="jxr_linenumber" name="L831" href="#L831">831</a> 	{
-<a class="jxr_linenumber" name="L832" href="#L832">832</a> 		updatingList = <strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="L833" href="#L833">833</a> 
-<a class="jxr_linenumber" name="L834" href="#L834">834</a> 		JComboBox combo = getObjectComboBox();
-<a class="jxr_linenumber" name="L835" href="#L835">835</a> 		<strong class="jxr_keyword">if</strong> (combo.getItemCount()&gt;0) combo.removeAllItems();		<em class="jxr_comment">// !!!</em>
-<a class="jxr_linenumber" name="L836" href="#L836">836</a> 		objs = com.cosylab.vdct.DataProvider.getInstance().getInspectable(dsId);
-<a class="jxr_linenumber" name="L837" href="#L837">837</a> 		Enumeration e = objs.elements();
-<a class="jxr_linenumber" name="L838" href="#L838">838</a> 		<strong class="jxr_keyword">while</strong> (e.hasMoreElements()) {
-<a class="jxr_linenumber" name="L839" href="#L839">839</a> 			combo.addItem(e.nextElement());
-<a class="jxr_linenumber" name="L840" href="#L840">840</a> 		}
-<a class="jxr_linenumber" name="L841" href="#L841">841</a> 		toRemove = <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="L842" href="#L842">842</a> 	}
-<a class="jxr_linenumber" name="L843" href="#L843">843</a> 	<strong class="jxr_keyword">finally</strong>
-<a class="jxr_linenumber" name="L844" href="#L844">844</a> 	{
-<a class="jxr_linenumber" name="L845" href="#L845">845</a> 		updatingList = false;
+<a class="jxr_linenumber" name="L800" href="#L800">800</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L801" href="#L801">801</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L802" href="#L802">802</a> <em class="jxr_javadoccomment">     * @param color color</em>
+<a class="jxr_linenumber" name="L803" href="#L803">803</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L804" href="#L804">804</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setHelpColor(Color color) {
+<a class="jxr_linenumber" name="L805" href="#L805">805</a> 	getHelpLabel().setForeground(color);
+<a class="jxr_linenumber" name="L806" href="#L806">806</a> }
+<a class="jxr_linenumber" name="L807" href="#L807">807</a> 
+<a class="jxr_linenumber" name="L808" href="#L808">808</a> <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L809" href="#L809">809</a> <em class="jxr_javadoccomment"> * Insert the method's description here.</em>
+<a class="jxr_linenumber" name="L810" href="#L810">810</a> <em class="jxr_javadoccomment"> * Creation date: (26.1.2001 16:24:25)</em>
+<a class="jxr_linenumber" name="L811" href="#L811">811</a> <em class="jxr_javadoccomment"> * @param state boolean</em>
+<a class="jxr_linenumber" name="L812" href="#L812">812</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L813" href="#L813">813</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setVisible(<strong class="jxr_keyword">boolean</strong> state) {
+<a class="jxr_linenumber" name="L814" href="#L814">814</a> 	<strong class="jxr_keyword">super</strong>.setVisible(state);
+<a class="jxr_linenumber" name="L815" href="#L815">815</a> 	<strong class="jxr_keyword">if</strong> (state) {
+<a class="jxr_linenumber" name="L816" href="#L816">816</a> 		toFront();
+<a class="jxr_linenumber" name="L817" href="#L817">817</a> 		requestFocus();
+<a class="jxr_linenumber" name="L818" href="#L818">818</a> 	}
+<a class="jxr_linenumber" name="L819" href="#L819">819</a> }
+<a class="jxr_linenumber" name="L820" href="#L820">820</a> <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L821" href="#L821">821</a> <em class="jxr_javadoccomment"> * Insert the method's description here.</em>
+<a class="jxr_linenumber" name="L822" href="#L822">822</a> <em class="jxr_javadoccomment"> * Creation date: (5.5.2001 15:13:41)</em>
+<a class="jxr_linenumber" name="L823" href="#L823">823</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L824" href="#L824">824</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> updateComment() {
+<a class="jxr_linenumber" name="L825" href="#L825">825</a> 	<strong class="jxr_keyword">if</strong> (inspectedObject!=<strong class="jxr_keyword">null</strong>)
+<a class="jxr_linenumber" name="L826" href="#L826">826</a> 		getCommentTextArea().setText(inspectedObject.getCommentProperty().getValue());
+<a class="jxr_linenumber" name="L827" href="#L827">827</a> }
+<a class="jxr_linenumber" name="L828" href="#L828">828</a> <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L829" href="#L829">829</a> <em class="jxr_javadoccomment"> * Insert the method's description here.</em>
+<a class="jxr_linenumber" name="L830" href="#L830">830</a> <em class="jxr_javadoccomment"> * Creation date: (8.1.2001 17:50:20)</em>
+<a class="jxr_linenumber" name="L831" href="#L831">831</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L832" href="#L832">832</a> <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">boolean</strong> updatingList = false;
+<a class="jxr_linenumber" name="L833" href="#L833">833</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> updateObjectList() {
+<a class="jxr_linenumber" name="L834" href="#L834">834</a> 	<strong class="jxr_keyword">try</strong>
+<a class="jxr_linenumber" name="L835" href="#L835">835</a> 	{
+<a class="jxr_linenumber" name="L836" href="#L836">836</a> 		updatingList = <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="L837" href="#L837">837</a> 
+<a class="jxr_linenumber" name="L838" href="#L838">838</a> 		JComboBox combo = getObjectComboBox();
+<a class="jxr_linenumber" name="L839" href="#L839">839</a> 		<strong class="jxr_keyword">if</strong> (combo.getItemCount()&gt;0) combo.removeAllItems();		<em class="jxr_comment">// !!!</em>
+<a class="jxr_linenumber" name="L840" href="#L840">840</a> 		objs = com.cosylab.vdct.DataProvider.getInstance().getInspectable(dsId);
+<a class="jxr_linenumber" name="L841" href="#L841">841</a> 		Enumeration e = objs.elements();
+<a class="jxr_linenumber" name="L842" href="#L842">842</a> 		<strong class="jxr_keyword">while</strong> (e.hasMoreElements()) {
+<a class="jxr_linenumber" name="L843" href="#L843">843</a> 			combo.addItem(e.nextElement());
+<a class="jxr_linenumber" name="L844" href="#L844">844</a> 		}
+<a class="jxr_linenumber" name="L845" href="#L845">845</a> 		toRemove = <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L846" href="#L846">846</a> 	}
-<a class="jxr_linenumber" name="L847" href="#L847">847</a> }
-<a class="jxr_linenumber" name="L848" href="#L848">848</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L849" href="#L849">849</a> <em class="jxr_javadoccomment"> * Insert the method's description here.</em>
-<a class="jxr_linenumber" name="L850" href="#L850">850</a> <em class="jxr_javadoccomment"> * Creation date: (5.5.2001 15:13:41)</em>
-<a class="jxr_linenumber" name="L851" href="#L851">851</a> <em class="jxr_javadoccomment"> * @param property com.cosylab.vdct.inspector.InspectableProperty</em>
-<a class="jxr_linenumber" name="L852" href="#L852">852</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L853" href="#L853">853</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> updateProperty(<a href="../../../../com/cosylab/vdct/inspector/InspectableProperty.html">InspectableProperty</a> property) {
-<a class="jxr_linenumber" name="L854" href="#L854">854</a> 	tableModel.updateProperty(property);
-<a class="jxr_linenumber" name="L855" href="#L855">855</a> }
-<a class="jxr_linenumber" name="L856" href="#L856">856</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L857" href="#L857">857</a> <em class="jxr_javadoccomment">	 * Invoked when the window is set to be the user's</em>
-<a class="jxr_linenumber" name="L858" href="#L858">858</a> <em class="jxr_javadoccomment">	 * active window, which means the window (or one of its</em>
-<a class="jxr_linenumber" name="L859" href="#L859">859</a> <em class="jxr_javadoccomment">	 * subcomponents) will receive keyboard events.</em>
-<a class="jxr_linenumber" name="L860" href="#L860">860</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L861" href="#L861">861</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowActivated(java.awt.event.WindowEvent e) {
-<a class="jxr_linenumber" name="L862" href="#L862">862</a> 	InspectorManager.getInstance().fucusGained(<strong class="jxr_keyword">this</strong>);
-<a class="jxr_linenumber" name="L863" href="#L863">863</a> 	<strong class="jxr_keyword">if</strong> (inspectedObject != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L864" href="#L864">864</a> 	    <strong class="jxr_keyword">if</strong> (inspectedObject instanceof VisibleObject) {
-<a class="jxr_linenumber" name="L865" href="#L865">865</a> 	        ViewState.getInstance(dsId).setAsHilited((VisibleObject) inspectedObject);
-<a class="jxr_linenumber" name="L866" href="#L866">866</a> 		    DsManager.getDrawingSurface(dsId).repaint(<strong class="jxr_keyword">true</strong>);
-<a class="jxr_linenumber" name="L867" href="#L867">867</a> 	    }
-<a class="jxr_linenumber" name="L868" href="#L868">868</a> 	}
-<a class="jxr_linenumber" name="L869" href="#L869">869</a> }
-<a class="jxr_linenumber" name="L870" href="#L870">870</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L871" href="#L871">871</a> <em class="jxr_javadoccomment">	 * Invoked when a window has been closed as the result</em>
-<a class="jxr_linenumber" name="L872" href="#L872">872</a> <em class="jxr_javadoccomment">	 * of calling dispose on the window.</em>
-<a class="jxr_linenumber" name="L873" href="#L873">873</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L874" href="#L874">874</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowClosed(java.awt.event.WindowEvent e) {}
+<a class="jxr_linenumber" name="L847" href="#L847">847</a> 	<strong class="jxr_keyword">finally</strong>
+<a class="jxr_linenumber" name="L848" href="#L848">848</a> 	{
+<a class="jxr_linenumber" name="L849" href="#L849">849</a> 		updatingList = false;
+<a class="jxr_linenumber" name="L850" href="#L850">850</a> 	}
+<a class="jxr_linenumber" name="L851" href="#L851">851</a> }
+<a class="jxr_linenumber" name="L852" href="#L852">852</a> <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L853" href="#L853">853</a> <em class="jxr_javadoccomment"> * Insert the method's description here.</em>
+<a class="jxr_linenumber" name="L854" href="#L854">854</a> <em class="jxr_javadoccomment"> * Creation date: (5.5.2001 15:13:41)</em>
+<a class="jxr_linenumber" name="L855" href="#L855">855</a> <em class="jxr_javadoccomment"> * @param property com.cosylab.vdct.inspector.InspectableProperty</em>
+<a class="jxr_linenumber" name="L856" href="#L856">856</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L857" href="#L857">857</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> updateProperty(<a href="../../../../com/cosylab/vdct/inspector/InspectableProperty.html">InspectableProperty</a> property) {
+<a class="jxr_linenumber" name="L858" href="#L858">858</a> 	tableModel.updateProperty(property);
+<a class="jxr_linenumber" name="L859" href="#L859">859</a> }
+<a class="jxr_linenumber" name="L860" href="#L860">860</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L861" href="#L861">861</a> <em class="jxr_javadoccomment">	 * Invoked when the window is set to be the user's</em>
+<a class="jxr_linenumber" name="L862" href="#L862">862</a> <em class="jxr_javadoccomment">	 * active window, which means the window (or one of its</em>
+<a class="jxr_linenumber" name="L863" href="#L863">863</a> <em class="jxr_javadoccomment">	 * subcomponents) will receive keyboard events.</em>
+<a class="jxr_linenumber" name="L864" href="#L864">864</a> <em class="jxr_javadoccomment">     * @param e e</em>
+<a class="jxr_linenumber" name="L865" href="#L865">865</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L866" href="#L866">866</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowActivated(java.awt.event.WindowEvent e) {
+<a class="jxr_linenumber" name="L867" href="#L867">867</a> 	InspectorManager.getInstance().fucusGained(<strong class="jxr_keyword">this</strong>);
+<a class="jxr_linenumber" name="L868" href="#L868">868</a> 	<strong class="jxr_keyword">if</strong> (inspectedObject != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L869" href="#L869">869</a> 	    <strong class="jxr_keyword">if</strong> (inspectedObject instanceof VisibleObject) {
+<a class="jxr_linenumber" name="L870" href="#L870">870</a> 	        ViewState.getInstance(dsId).setAsHilited((VisibleObject) inspectedObject);
+<a class="jxr_linenumber" name="L871" href="#L871">871</a> 		    DsManager.getDrawingSurface(dsId).repaint(<strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L872" href="#L872">872</a> 	    }
+<a class="jxr_linenumber" name="L873" href="#L873">873</a> 	}
+<a class="jxr_linenumber" name="L874" href="#L874">874</a> }
 <a class="jxr_linenumber" name="L875" href="#L875">875</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L876" href="#L876">876</a> <em class="jxr_javadoccomment">	 * Invoked when the user attempts to close the window</em>
-<a class="jxr_linenumber" name="L877" href="#L877">877</a> <em class="jxr_javadoccomment">	 * from the window's system menu.  If the program does not </em>
-<a class="jxr_linenumber" name="L878" href="#L878">878</a> <em class="jxr_javadoccomment">	 * explicitly hide or dispose the window while processing </em>
-<a class="jxr_linenumber" name="L879" href="#L879">879</a> <em class="jxr_javadoccomment">	 * this event, the window close operation will be cancelled.</em>
-<a class="jxr_linenumber" name="L880" href="#L880">880</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L881" href="#L881">881</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowClosing(java.awt.event.WindowEvent e) {}
-<a class="jxr_linenumber" name="L882" href="#L882">882</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L883" href="#L883">883</a> <em class="jxr_javadoccomment">	 * Invoked when a window is no longer the user's active</em>
-<a class="jxr_linenumber" name="L884" href="#L884">884</a> <em class="jxr_javadoccomment">	 * window, which means that keyboard events will no longer</em>
-<a class="jxr_linenumber" name="L885" href="#L885">885</a> <em class="jxr_javadoccomment">	 * be delivered to the window or its subcomponents.</em>
-<a class="jxr_linenumber" name="L886" href="#L886">886</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L887" href="#L887">887</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowDeactivated(java.awt.event.WindowEvent e) {
-<a class="jxr_linenumber" name="L888" href="#L888">888</a>     <strong class="jxr_keyword">if</strong> (inspectedObject != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L889" href="#L889">889</a> 	    <strong class="jxr_keyword">if</strong> (inspectedObject instanceof VisibleObject) {
-<a class="jxr_linenumber" name="L890" href="#L890">890</a> 	        ViewState.getInstance(dsId).setAsHilited(<strong class="jxr_keyword">null</strong>);
-<a class="jxr_linenumber" name="L891" href="#L891">891</a> 		    DsManager.getDrawingSurface(dsId).repaint(<strong class="jxr_keyword">true</strong>);
-<a class="jxr_linenumber" name="L892" href="#L892">892</a> 	    }
-<a class="jxr_linenumber" name="L893" href="#L893">893</a> 	}
-<a class="jxr_linenumber" name="L894" href="#L894">894</a> }
-<a class="jxr_linenumber" name="L895" href="#L895">895</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L896" href="#L896">896</a> <em class="jxr_javadoccomment">	 * Invoked when a window is changed from a minimized</em>
-<a class="jxr_linenumber" name="L897" href="#L897">897</a> <em class="jxr_javadoccomment">	 * to a normal state.</em>
-<a class="jxr_linenumber" name="L898" href="#L898">898</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L899" href="#L899">899</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowDeiconified(java.awt.event.WindowEvent e) {}
-<a class="jxr_linenumber" name="L900" href="#L900">900</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L901" href="#L901">901</a> <em class="jxr_javadoccomment">	 * Invoked when a window is changed from a normal to a</em>
-<a class="jxr_linenumber" name="L902" href="#L902">902</a> <em class="jxr_javadoccomment">	 * minimized state. For many platforms, a minimized window </em>
-<a class="jxr_linenumber" name="L903" href="#L903">903</a> <em class="jxr_javadoccomment">	 * is displayed as the icon specified in the window's </em>
-<a class="jxr_linenumber" name="L904" href="#L904">904</a> <em class="jxr_javadoccomment">	 * iconImage property.</em>
-<a class="jxr_linenumber" name="L905" href="#L905">905</a> <em class="jxr_javadoccomment">	 * @see Frame#setIconImage</em>
-<a class="jxr_linenumber" name="L906" href="#L906">906</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L907" href="#L907">907</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowIconified(java.awt.event.WindowEvent e) {}
-<a class="jxr_linenumber" name="L908" href="#L908">908</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L909" href="#L909">909</a> <em class="jxr_javadoccomment">	 * Invoked the first time a window is made visible.</em>
-<a class="jxr_linenumber" name="L910" href="#L910">910</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L911" href="#L911">911</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowOpened(java.awt.event.WindowEvent e) {}
-<a class="jxr_linenumber" name="L912" href="#L912">912</a> 
-<a class="jxr_linenumber" name="L913" href="#L913">913</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L914" href="#L914">914</a> <em class="jxr_javadoccomment"> * Returns the mode.</em>
-<a class="jxr_linenumber" name="L915" href="#L915">915</a> <em class="jxr_javadoccomment"> * @return int</em>
-<a class="jxr_linenumber" name="L916" href="#L916">916</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L917" href="#L917">917</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> getMode()
-<a class="jxr_linenumber" name="L918" href="#L918">918</a> {
-<a class="jxr_linenumber" name="L919" href="#L919">919</a> 	<strong class="jxr_keyword">return</strong> mode;
-<a class="jxr_linenumber" name="L920" href="#L920">920</a> }
-<a class="jxr_linenumber" name="L921" href="#L921">921</a> 
-<a class="jxr_linenumber" name="L922" href="#L922">922</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L923" href="#L923">923</a> <em class="jxr_javadoccomment"> * Sets the mode.</em>
-<a class="jxr_linenumber" name="L924" href="#L924">924</a> <em class="jxr_javadoccomment"> * @param mode The mode to set</em>
-<a class="jxr_linenumber" name="L925" href="#L925">925</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L926" href="#L926">926</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setMode(<strong class="jxr_keyword">int</strong> mode)
-<a class="jxr_linenumber" name="L927" href="#L927">927</a> {
-<a class="jxr_linenumber" name="L928" href="#L928">928</a> 	<strong class="jxr_keyword">this</strong>.mode = mode;
-<a class="jxr_linenumber" name="L929" href="#L929">929</a> }
-<a class="jxr_linenumber" name="L930" href="#L930">930</a> 
-<a class="jxr_linenumber" name="L931" href="#L931">931</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L932" href="#L932">932</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L933" href="#L933">933</a> <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> mouseEvent(MouseEvent event, <strong class="jxr_keyword">int</strong> row, <strong class="jxr_keyword">int</strong> col)
-<a class="jxr_linenumber" name="L934" href="#L934">934</a> {
-<a class="jxr_linenumber" name="L935" href="#L935">935</a> 	<strong class="jxr_keyword">boolean</strong> popupTrigger = event.getButton() == MouseEvent.BUTTON3;
-<a class="jxr_linenumber" name="L936" href="#L936">936</a> 	<em class="jxr_comment">// event.isPopupTrigger() does not work on my instalation of Linux (RH7.2, GNOME 1.4) </em>
-<a class="jxr_linenumber" name="L937" href="#L937">937</a> 	
-<a class="jxr_linenumber" name="L938" href="#L938">938</a> 	InspectableProperty property = (InspectableProperty)tableModel.getPropertyAt(row, col);
-<a class="jxr_linenumber" name="L939" href="#L939">939</a> 
-<a class="jxr_linenumber" name="L940" href="#L940">940</a> 	<em class="jxr_comment">// change visibility</em>
-<a class="jxr_linenumber" name="L941" href="#L941">941</a> 	<strong class="jxr_keyword">if</strong> (col==0)
-<a class="jxr_linenumber" name="L942" href="#L942">942</a> 	{
-<a class="jxr_linenumber" name="L943" href="#L943">943</a> 		<strong class="jxr_keyword">if</strong> (property!=<strong class="jxr_keyword">null</strong> &amp;&amp; property instanceof ChangableVisibility)  
-<a class="jxr_linenumber" name="L944" href="#L944">944</a> 		{
-<a class="jxr_linenumber" name="L945" href="#L945">945</a> 			<strong class="jxr_keyword">int</strong> visibility = property.getVisibility();
-<a class="jxr_linenumber" name="L946" href="#L946">946</a> 			visibility = (visibility+1) % 3;						<em class="jxr_comment">/// !!! who said there are only three modes?!</em>
-<a class="jxr_linenumber" name="L947" href="#L947">947</a> 			((ChangableVisibility)property).setVisibility(visibility);
-<a class="jxr_linenumber" name="L948" href="#L948">948</a> 
-<a class="jxr_linenumber" name="L949" href="#L949">949</a> 			<em class="jxr_comment">// this does now work permanently (try to scroll), but after table update it works?</em>
-<a class="jxr_linenumber" name="L950" href="#L950">950</a> 			getScrollPaneTable().tableChanged(<strong class="jxr_keyword">new</strong> TableModelEvent(tableModel, row, row, col));
-<a class="jxr_linenumber" name="L951" href="#L951">951</a> 		}
-<a class="jxr_linenumber" name="L952" href="#L952">952</a> 	}
-<a class="jxr_linenumber" name="L953" href="#L953">953</a> 	<strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (popupTrigger)
-<a class="jxr_linenumber" name="L954" href="#L954">954</a> 	{
-<a class="jxr_linenumber" name="L955" href="#L955">955</a> 		<strong class="jxr_keyword">if</strong> (property!=<strong class="jxr_keyword">null</strong>)
-<a class="jxr_linenumber" name="L956" href="#L956">956</a> 			property.popupEvent(getScrollPaneTable(), event.getX(), event.getY());
-<a class="jxr_linenumber" name="L957" href="#L957">957</a> 	}
-<a class="jxr_linenumber" name="L958" href="#L958">958</a> 
-<a class="jxr_linenumber" name="L959" href="#L959">959</a> }
-<a class="jxr_linenumber" name="L960" href="#L960">960</a> 
-<a class="jxr_linenumber" name="L961" href="#L961">961</a> <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L962" href="#L962">962</a> <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L963" href="#L963">963</a> <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> initializeTabs(ArrayList tabs)
-<a class="jxr_linenumber" name="L964" href="#L964">964</a> {
-<a class="jxr_linenumber" name="L965" href="#L965">965</a> 	<strong class="jxr_keyword">if</strong> (tabs!=currentTabs)			<em class="jxr_comment">// is object is using flyweight pattern, this is a good optimization</em>
-<a class="jxr_linenumber" name="L966" href="#L966">966</a> 	{
-<a class="jxr_linenumber" name="L967" href="#L967">967</a> 		currentTabs = tabs;
-<a class="jxr_linenumber" name="L968" href="#L968">968</a> 		
-<a class="jxr_linenumber" name="L969" href="#L969">969</a> 		getViewTabbedPane().removeAll();
-<a class="jxr_linenumber" name="L970" href="#L970">970</a> 		<strong class="jxr_keyword">if</strong> (currentTabs==<strong class="jxr_keyword">null</strong>)
-<a class="jxr_linenumber" name="L971" href="#L971">971</a> 			getViewTabbedPane().addTab(defaultString, <strong class="jxr_keyword">null</strong>);		
-<a class="jxr_linenumber" name="L972" href="#L972">972</a> 		<strong class="jxr_keyword">else</strong>
-<a class="jxr_linenumber" name="L973" href="#L973">973</a> 		{
-<a class="jxr_linenumber" name="L974" href="#L974">974</a> 			Iterator i = currentTabs.iterator();
-<a class="jxr_linenumber" name="L975" href="#L975">975</a> 			<strong class="jxr_keyword">while</strong> (i.hasNext())
-<a class="jxr_linenumber" name="L976" href="#L976">976</a> 				getViewTabbedPane().addTab(i.next().toString(), <strong class="jxr_keyword">null</strong>);		
-<a class="jxr_linenumber" name="L977" href="#L977">977</a> 		}
-<a class="jxr_linenumber" name="L978" href="#L978">978</a> 		<em class="jxr_comment">// TBD: set the last mode of the object (now it will always switch to the first one) !!!</em>
-<a class="jxr_linenumber" name="L979" href="#L979">979</a> 	}
-<a class="jxr_linenumber" name="L980" href="#L980">980</a> }
-<a class="jxr_linenumber" name="L981" href="#L981">981</a> 
-<a class="jxr_linenumber" name="L982" href="#L982">982</a> <strong class="jxr_keyword">public</strong> Object getDsId() {
-<a class="jxr_linenumber" name="L983" href="#L983">983</a>     <strong class="jxr_keyword">return</strong> dsId;
-<a class="jxr_linenumber" name="L984" href="#L984">984</a> }
-<a class="jxr_linenumber" name="L985" href="#L985">985</a> 
-<a class="jxr_linenumber" name="L986" href="#L986">986</a> }
-<a class="jxr_linenumber" name="L987" href="#L987">987</a> 
+<a class="jxr_linenumber" name="L876" href="#L876">876</a> <em class="jxr_javadoccomment">	 * Invoked when a window has been closed as the result</em>
+<a class="jxr_linenumber" name="L877" href="#L877">877</a> <em class="jxr_javadoccomment">	 * of calling dispose on the window.</em>
+<a class="jxr_linenumber" name="L878" href="#L878">878</a> <em class="jxr_javadoccomment">     * @param e e</em>
+<a class="jxr_linenumber" name="L879" href="#L879">879</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L880" href="#L880">880</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowClosed(java.awt.event.WindowEvent e) {}
+<a class="jxr_linenumber" name="L881" href="#L881">881</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L882" href="#L882">882</a> <em class="jxr_javadoccomment">	 * Invoked when the user attempts to close the window</em>
+<a class="jxr_linenumber" name="L883" href="#L883">883</a> <em class="jxr_javadoccomment">	 * from the window's system menu.  If the program does not </em>
+<a class="jxr_linenumber" name="L884" href="#L884">884</a> <em class="jxr_javadoccomment">	 * explicitly hide or dispose the window while processing </em>
+<a class="jxr_linenumber" name="L885" href="#L885">885</a> <em class="jxr_javadoccomment">	 * this event, the window close operation will be cancelled.</em>
+<a class="jxr_linenumber" name="L886" href="#L886">886</a> <em class="jxr_javadoccomment">     * @param e e</em>
+<a class="jxr_linenumber" name="L887" href="#L887">887</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L888" href="#L888">888</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowClosing(java.awt.event.WindowEvent e) {}
+<a class="jxr_linenumber" name="L889" href="#L889">889</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L890" href="#L890">890</a> <em class="jxr_javadoccomment">	 * Invoked when a window is no longer the user's active</em>
+<a class="jxr_linenumber" name="L891" href="#L891">891</a> <em class="jxr_javadoccomment">	 * window, which means that keyboard events will no longer</em>
+<a class="jxr_linenumber" name="L892" href="#L892">892</a> <em class="jxr_javadoccomment">	 * be delivered to the window or its subcomponents.</em>
+<a class="jxr_linenumber" name="L893" href="#L893">893</a> <em class="jxr_javadoccomment">     * @param e e</em>
+<a class="jxr_linenumber" name="L894" href="#L894">894</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L895" href="#L895">895</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowDeactivated(java.awt.event.WindowEvent e) {
+<a class="jxr_linenumber" name="L896" href="#L896">896</a>     <strong class="jxr_keyword">if</strong> (inspectedObject != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L897" href="#L897">897</a> 	    <strong class="jxr_keyword">if</strong> (inspectedObject instanceof VisibleObject) {
+<a class="jxr_linenumber" name="L898" href="#L898">898</a> 	        ViewState.getInstance(dsId).setAsHilited(<strong class="jxr_keyword">null</strong>);
+<a class="jxr_linenumber" name="L899" href="#L899">899</a> 		    DsManager.getDrawingSurface(dsId).repaint(<strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L900" href="#L900">900</a> 	    }
+<a class="jxr_linenumber" name="L901" href="#L901">901</a> 	}
+<a class="jxr_linenumber" name="L902" href="#L902">902</a> }
+<a class="jxr_linenumber" name="L903" href="#L903">903</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L904" href="#L904">904</a> <em class="jxr_javadoccomment">	 * Invoked when a window is changed from a minimized</em>
+<a class="jxr_linenumber" name="L905" href="#L905">905</a> <em class="jxr_javadoccomment">	 * to a normal state.</em>
+<a class="jxr_linenumber" name="L906" href="#L906">906</a> <em class="jxr_javadoccomment">     * @param e e</em>
+<a class="jxr_linenumber" name="L907" href="#L907">907</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L908" href="#L908">908</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowDeiconified(java.awt.event.WindowEvent e) {}
+<a class="jxr_linenumber" name="L909" href="#L909">909</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L910" href="#L910">910</a> <em class="jxr_javadoccomment">	 * Invoked when a window is changed from a normal to a</em>
+<a class="jxr_linenumber" name="L911" href="#L911">911</a> <em class="jxr_javadoccomment">	 * minimized state. For many platforms, a minimized window </em>
+<a class="jxr_linenumber" name="L912" href="#L912">912</a> <em class="jxr_javadoccomment">	 * is displayed as the icon specified in the window's </em>
+<a class="jxr_linenumber" name="L913" href="#L913">913</a> <em class="jxr_javadoccomment">	 * iconImage property.</em>
+<a class="jxr_linenumber" name="L914" href="#L914">914</a> <em class="jxr_javadoccomment">     * @param e e</em>
+<a class="jxr_linenumber" name="L915" href="#L915">915</a> <em class="jxr_javadoccomment">	 * @see Frame#setIconImage</em>
+<a class="jxr_linenumber" name="L916" href="#L916">916</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L917" href="#L917">917</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowIconified(java.awt.event.WindowEvent e) {}
+<a class="jxr_linenumber" name="L918" href="#L918">918</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L919" href="#L919">919</a> <em class="jxr_javadoccomment">	 * Invoked the first time a window is made visible.</em>
+<a class="jxr_linenumber" name="L920" href="#L920">920</a> <em class="jxr_javadoccomment">     * @param e e</em>
+<a class="jxr_linenumber" name="L921" href="#L921">921</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L922" href="#L922">922</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> windowOpened(java.awt.event.WindowEvent e) {}
+<a class="jxr_linenumber" name="L923" href="#L923">923</a> 
+<a class="jxr_linenumber" name="L924" href="#L924">924</a> <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L925" href="#L925">925</a> <em class="jxr_javadoccomment"> * Returns the mode.</em>
+<a class="jxr_linenumber" name="L926" href="#L926">926</a> <em class="jxr_javadoccomment"> * @return int</em>
+<a class="jxr_linenumber" name="L927" href="#L927">927</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L928" href="#L928">928</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> getMode()
+<a class="jxr_linenumber" name="L929" href="#L929">929</a> {
+<a class="jxr_linenumber" name="L930" href="#L930">930</a> 	<strong class="jxr_keyword">return</strong> mode;
+<a class="jxr_linenumber" name="L931" href="#L931">931</a> }
+<a class="jxr_linenumber" name="L932" href="#L932">932</a> 
+<a class="jxr_linenumber" name="L933" href="#L933">933</a> <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L934" href="#L934">934</a> <em class="jxr_javadoccomment"> * Sets the mode.</em>
+<a class="jxr_linenumber" name="L935" href="#L935">935</a> <em class="jxr_javadoccomment"> * @param mode The mode to set</em>
+<a class="jxr_linenumber" name="L936" href="#L936">936</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L937" href="#L937">937</a> <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setMode(<strong class="jxr_keyword">int</strong> mode)
+<a class="jxr_linenumber" name="L938" href="#L938">938</a> {
+<a class="jxr_linenumber" name="L939" href="#L939">939</a> 	<strong class="jxr_keyword">this</strong>.mode = mode;
+<a class="jxr_linenumber" name="L940" href="#L940">940</a> }
+<a class="jxr_linenumber" name="L941" href="#L941">941</a> 
+<a class="jxr_linenumber" name="L942" href="#L942">942</a> <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L943" href="#L943">943</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L944" href="#L944">944</a> <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> mouseEvent(MouseEvent event, <strong class="jxr_keyword">int</strong> row, <strong class="jxr_keyword">int</strong> col)
+<a class="jxr_linenumber" name="L945" href="#L945">945</a> {
+<a class="jxr_linenumber" name="L946" href="#L946">946</a> 	<strong class="jxr_keyword">boolean</strong> popupTrigger = event.getButton() == MouseEvent.BUTTON3;
+<a class="jxr_linenumber" name="L947" href="#L947">947</a> 	<em class="jxr_comment">// event.isPopupTrigger() does not work on my instalation of Linux (RH7.2, GNOME 1.4) </em>
+<a class="jxr_linenumber" name="L948" href="#L948">948</a> 	
+<a class="jxr_linenumber" name="L949" href="#L949">949</a> 	InspectableProperty property = (InspectableProperty)tableModel.getPropertyAt(row, col);
+<a class="jxr_linenumber" name="L950" href="#L950">950</a> 
+<a class="jxr_linenumber" name="L951" href="#L951">951</a> 	<em class="jxr_comment">// change visibility</em>
+<a class="jxr_linenumber" name="L952" href="#L952">952</a> 	<strong class="jxr_keyword">if</strong> (col==0)
+<a class="jxr_linenumber" name="L953" href="#L953">953</a> 	{
+<a class="jxr_linenumber" name="L954" href="#L954">954</a> 		<strong class="jxr_keyword">if</strong> (property!=<strong class="jxr_keyword">null</strong> &amp;&amp; property instanceof ChangableVisibility)  
+<a class="jxr_linenumber" name="L955" href="#L955">955</a> 		{
+<a class="jxr_linenumber" name="L956" href="#L956">956</a> 			<strong class="jxr_keyword">int</strong> visibility = property.getVisibility();
+<a class="jxr_linenumber" name="L957" href="#L957">957</a> 			visibility = (visibility+1) % 3;						<em class="jxr_comment">/// !!! who said there are only three modes?!</em>
+<a class="jxr_linenumber" name="L958" href="#L958">958</a> 			((ChangableVisibility)property).setVisibility(visibility);
+<a class="jxr_linenumber" name="L959" href="#L959">959</a> 
+<a class="jxr_linenumber" name="L960" href="#L960">960</a> 			<em class="jxr_comment">// this does now work permanently (try to scroll), but after table update it works?</em>
+<a class="jxr_linenumber" name="L961" href="#L961">961</a> 			getScrollPaneTable().tableChanged(<strong class="jxr_keyword">new</strong> TableModelEvent(tableModel, row, row, col));
+<a class="jxr_linenumber" name="L962" href="#L962">962</a> 		}
+<a class="jxr_linenumber" name="L963" href="#L963">963</a> 	}
+<a class="jxr_linenumber" name="L964" href="#L964">964</a> 	<strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (popupTrigger)
+<a class="jxr_linenumber" name="L965" href="#L965">965</a> 	{
+<a class="jxr_linenumber" name="L966" href="#L966">966</a> 		<strong class="jxr_keyword">if</strong> (property!=<strong class="jxr_keyword">null</strong>)
+<a class="jxr_linenumber" name="L967" href="#L967">967</a> 			property.popupEvent(getScrollPaneTable(), event.getX(), event.getY());
+<a class="jxr_linenumber" name="L968" href="#L968">968</a> 	}
+<a class="jxr_linenumber" name="L969" href="#L969">969</a> 
+<a class="jxr_linenumber" name="L970" href="#L970">970</a> }
+<a class="jxr_linenumber" name="L971" href="#L971">971</a> 
+<a class="jxr_linenumber" name="L972" href="#L972">972</a> <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L973" href="#L973">973</a> <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L974" href="#L974">974</a> <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> initializeTabs(ArrayList tabs)
+<a class="jxr_linenumber" name="L975" href="#L975">975</a> {
+<a class="jxr_linenumber" name="L976" href="#L976">976</a> 	<strong class="jxr_keyword">if</strong> (tabs!=currentTabs)			<em class="jxr_comment">// is object is using flyweight pattern, this is a good optimization</em>
+<a class="jxr_linenumber" name="L977" href="#L977">977</a> 	{
+<a class="jxr_linenumber" name="L978" href="#L978">978</a> 		currentTabs = tabs;
+<a class="jxr_linenumber" name="L979" href="#L979">979</a> 		
+<a class="jxr_linenumber" name="L980" href="#L980">980</a> 		getViewTabbedPane().removeAll();
+<a class="jxr_linenumber" name="L981" href="#L981">981</a> 		<strong class="jxr_keyword">if</strong> (currentTabs==<strong class="jxr_keyword">null</strong>)
+<a class="jxr_linenumber" name="L982" href="#L982">982</a> 			getViewTabbedPane().addTab(defaultString, <strong class="jxr_keyword">null</strong>);		
+<a class="jxr_linenumber" name="L983" href="#L983">983</a> 		<strong class="jxr_keyword">else</strong>
+<a class="jxr_linenumber" name="L984" href="#L984">984</a> 		{
+<a class="jxr_linenumber" name="L985" href="#L985">985</a> 			Iterator i = currentTabs.iterator();
+<a class="jxr_linenumber" name="L986" href="#L986">986</a> 			<strong class="jxr_keyword">while</strong> (i.hasNext())
+<a class="jxr_linenumber" name="L987" href="#L987">987</a> 				getViewTabbedPane().addTab(i.next().toString(), <strong class="jxr_keyword">null</strong>);		
+<a class="jxr_linenumber" name="L988" href="#L988">988</a> 		}
+<a class="jxr_linenumber" name="L989" href="#L989">989</a> 		<em class="jxr_comment">// TBD: set the last mode of the object (now it will always switch to the first one) !!!</em>
+<a class="jxr_linenumber" name="L990" href="#L990">990</a> 	}
+<a class="jxr_linenumber" name="L991" href="#L991">991</a> }
+<a class="jxr_linenumber" name="L992" href="#L992">992</a> 
+<a class="jxr_linenumber" name="L993" href="#L993">993</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L994" href="#L994">994</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L995" href="#L995">995</a> <em class="jxr_javadoccomment">     * @return something</em>
+<a class="jxr_linenumber" name="L996" href="#L996">996</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L997" href="#L997">997</a>     <strong class="jxr_keyword">public</strong> Object getDsId() {
+<a class="jxr_linenumber" name="L998" href="#L998">998</a>     <strong class="jxr_keyword">return</strong> dsId;
+<a class="jxr_linenumber" name="L999" href="#L999">999</a> }
+<a class="jxr_linenumber" name="L1000" href="#L1000">1000</a> 
+<a class="jxr_linenumber" name="L1001" href="#L1001">1001</a> }
+<a class="jxr_linenumber" name="L1002" href="#L1002">1002</a> 
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2002&#x2013;2018 <a href="http://www.cosylab.com/">Cosylab</a>. All rights reserved.</div>
